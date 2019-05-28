@@ -1,0 +1,93 @@
+---
+title: "IST_719_HW7"
+author: "Kendra Osburn"
+date: "5/27/2019"
+output: html_document
+---
+## QUESTION 1
+### Recreate the boxplot using ggplot. 
+```{r}
+library(ggplot2)
+ggplot(diamonds, aes(clarity, price, fill = clarity)) +
+  geom_boxplot() +
+  stat_boxplot(geom = 'errorbar') 
+```
+
+###What does this tell you about median price with respect to clarity? 
+Aside from the best clarity, median price is clearly related to diamond clarity. As the clarity decreases, so does the median price.
+
+## QUESTION 2
+##	Recreate the boxplot to show caret by clarity
+```{r}
+ggplot(diamonds, aes(clarity, carat, fill = clarity)) +
+  geom_boxplot() +
+  stat_boxplot(geom = 'errorbar') 
+```
+
+### What does this tell you about caret size with respect to clarity
+Carat size is also related to clarity. The lower clarity diamonds are all under 2.5 carats, and the median is below 0.5 carats. The higher clarity diamonds have both higher medians and greater ranges in carat sizes. 
+
+
+## QUESTION 3
+### Recreate the stacked bar chart using ggplot.
+```{r}
+ggplot(diamonds, aes(clarity, fill = color)) +
+  geom_bar() +
+  xlab('clarity -- worst to best')
+```
+
+#### ATTEMPT TWO
+```{r}
+ggplot(diamonds, aes(clarity, fill = color)) +
+  geom_bar() +
+  xlab('clarity -- worst to best') +
+  scale_y_log10()
+```
+
+Clearly, this attempt didn't help.
+
+#### ATTEMPT THREE
+ASIDE: Professor, I have no idea what I did here but this looks interesting. WHAT DOES IT MEAN?! WHAT DID I DO!? Also, I definitely don't want Nans produced...
+```{r message=FALSE, warning=FALSE}
+pow10 <- scales::exp_trans(2)
+ggplot(diamonds, aes(clarity, fill = color)) +
+  geom_bar() +
+  xlab('clarity -- worst to best') +
+  scale_y_log10() +
+  coord_trans(y= pow10)
+```
+
+#### ATTEMPT FOUR
+```{r}
+ggplot(diamonds, aes(clarity, fill = color)) +
+  geom_bar() +
+  xlab('clarity -- worst to best') +
+  expand_limits(color = factor(seq(2, 10, by = 2)))
+```
+
+Looks identical to the original chart -- clearly I have no idea what expand_limits with factor is really doing.
+```{r}
+ggplot(diamonds, aes(clarity, fill = color)) +
+  geom_bar(position = "fill") +
+  xlab('clarity -- worst to best') 
+```
+
+```{r}
+ggplot(diamonds, aes(clarity, fill = color)) +
+  geom_bar(position = "dodge") +
+  xlab('clarity -- worst to best') 
+```
+
+Even though this doesn't match the homework, it is more helpful in understanding the relationship between color and clarity.
+
+### What does the stacked bar say about clarity and color. 
+Initial attempt(s) at graphing didn't tell much of a story. Additional graphs were needed and used, however, it is unclear how much they helped answer the question. (NOTE: Honestly, I'm not sure count is the best method of answering this question. However, under the parameters of the homework question which instructed us to replicate the included graph (which used count), there appears to be a relationship, but the relationship seems more to do with quantity and availability than actual relationship.)
+
+### Do lower clarity diamonds have good color and why?
+NOTE: Color scale -- D is best, J is worst
+Lower clarity diamonds don't have the best color and don't have the worst color -- they have a range of the mediocre colors. There is not enough information to answer 'why' however, if forced to conjecture, I'd guess color impacted clarity in some way. Without knowing more about the colors (are some darker? Does dark mean cloudier?), it is misguided to make a more definite conclusion. 
+
+### Is there an association between clarity and color, why?
+Disregarding the highest clarity, there does appear to be an association between clarity and color. The diamonds with the highest clarity also appear to have the best color. Again, there is not enough information to answer 'why', however, if forced to conjecture, I'd guess color impacted clarity in some way. 
+
+FIN.
