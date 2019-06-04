@@ -1,0 +1,131 @@
+---
+title: "IST_719_best_happiness_plots"
+author: "Kendra Osburn"
+date: "6/3/2019"
+output: html_document
+---
+
+```{r message=FALSE, warning=FALSE}
+library(ggplot2)
+library(dplyr)
+library(reshape)
+setwd("/Users/kendraosburn/syracuse/719")
+happiness <- read.csv('happiness_project.csv', sep=",", header=TRUE)
+```
+
+```{r message=FALSE, warning=FALSE}
+### ATTEMPT ONE -- this drops region
+## Making data small for ease
+just_score <- select(happiness, country, region, happiness_score)
+
+## Getting the average of the scores by country
+just_score_average <- just_score %>%
+  group_by(country) %>%
+  summarize(avg_score = mean(happiness_score))
+
+## Arranging
+just_score_average <- just_score_average %>%
+  arrange(desc(avg_score))
+
+## Getting average of avg_score
+## TODO: Get all above average and below average
+average_score <- just_score_average %>%
+  summarize(average_score = mean(avg_score))
+
+## 20 happiest and 20 least happy
+happiest <- just_score_average %>% top_n(20)
+least_happy <- just_score_average %>% top_n(-20)
+
+### ATTEMPT 2 -- This keeps region and is cleaner 
+#Create a new column called avg which is country avg
+test<- happiness %>%
+  group_by(country) %>%
+  mutate(avg = mean(happiness_score)) %>%
+  ungroup()
+
+#Only the columns I care about
+test_sm <- select(test, country, region, avg)
+
+#Finally what we want!
+test2 <- test_sm %>% group_by(country) %>% filter(avg == min(avg))
+
+#Removing the created duplicates
+unique_test <- unique(test2)
+
+#Arranging
+unique_test2 <- unique_test %>%
+  arrange(desc(avg))
+
+top <- unique_test2[1:20,]
+bottom <- unique_test2[131:151,]
+
+ggplot(top, aes(x=reorder(country, -avg), y=avg, fill=region)) +
+  geom_bar(stat="identity") +
+  coord_cartesian(ylim=c(6.75,7.65)) +
+  theme(axis.text.x = element_text(angle = 90))
+
+ggplot(bottom, aes(x=reorder(country, avg), y=avg, fill=region)) +
+  geom_bar(stat="identity") +
+  coord_cartesian(ylim=c(2,4.5)) +
+  theme(axis.text.x = element_text(angle = 90))
+```
+
+```{r}
+FUN <- function(dat, x, y) {
+  ggplot(dat, aes_string(x = x, y = y)) +
+    geom_boxplot() +
+    coord_flip()
+}
+
+for(column in colnames(happiness[,6:13])){
+  print(FUN(happiness, "region", column ))
+}
+```
+
+```{r}
+FUN2 <- function(dat, x, y, z) {
+  ggplot(dat, aes_string(x = x, y = y)) +
+    geom_boxplot() +
+    theme(axis.text.x=element_text(angle=90, hjust=1))
+}
+
+for(column in colnames(happiness[,6:13])){
+  print(FUN2(happiness, "region", column))
+}
+```
+```{r}
+FUN2 <- function(dat, x, y, z) {
+  ggplot(dat, aes_string(x = x, y = y, fill=x)) +
+    geom_boxplot() +
+    theme(axis.text.x=element_blank())
+}
+
+for(column in colnames(happiness[,6:13])){
+  print(FUN2(happiness, "region", column))
+}
+```
+
+```{r}
+happiness_sm <- select(happiness, year, happiness_score)
+happiness_melt <- melt(happiness_sm, id=c('year', 'happiness_score'))
+par(mfrow=c(1,3))
+
+years <- unique(happiness_melt$year)
+for (year in years) {
+hist(happiness_melt[happiness_melt$year == year,]$happiness_score, 
+     xlim=c(3,8), main = paste(year), xlab="Score", ylab="Frequency")
+}
+```
+
+```{r}
+par(mfrow=c(3,3))
+happiness_sm <- select(happiness, region, happiness_score)
+happiness_melt <- melt(happiness_sm, id=c('region', 'happiness_score'))
+regions <- unique(happiness_melt$region)
+for (region in regions) {
+hist(happiness_melt[happiness_melt$region == region,]$happiness_score, 
+     xlim=c(3,8), main = paste(region), xlab="Score", ylab="Countries")
+}
+```
+
+FIN.
