@@ -36,3 +36,6 @@ print(print(donors.groupby("WEALTH").HV.sum()/donors.groupby("WEALTH").HV.count(
 print(donors.groupby(["WEALTH", 'NUMCHLD']).HV.sum())
 # By both wealth and gender
 print(donors.groupby(["WEALTH", 'gender dummy']).HV.sum())
+
+# NOTES
+# https://stackoverflow.com/questions/17666075/python-pandas-groupby-result/17666287#17666287
