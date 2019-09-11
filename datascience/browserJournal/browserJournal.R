@@ -1,3 +1,4 @@
+
 setwd('/Users/kendraosburn/browserJournal')
 df <- read.csv('bh_0819_sm_date.csv')
 library(dplyr)
