@@ -1,0 +1,1429 @@
+---
+title: "GROUP 4: Final Project"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source_code: embed
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, warning=FALSE, message=FALSE)
+library(flexdashboard)
+# Getting rid of scientific notation 
+options(digits = 4, scipen = 999999)
+# Our favorite list of libraries
+library(psych)
+library(ggplot2)
+library(GGally)
+library(lubridate)
+library(dplyr)
+library(quantreg)
+library(forecast)
+library(tidyquant)
+library(timetk)
+library(quantmod)
+library(matrixStats)
+library(plotly)
+library(quadprog)
+
+# Why is this line always here? What is this doing?
+#stocks_env <- new.env()
+
+# symbols <- c("DIS", "NFLX", "CMCSA", "DISH")
+symbols <- c("DIS", "NFLX", "CMCSA", "DISH")
+
+# price tibble
+price_tbl <- tq_get(symbols) %>% 
+  select(date, symbol, price = adjusted)
+
+# return tibble
+return_tbl <- price_tbl %>% 
+  group_by(symbol) %>% 
+  tq_transmute(mutate_fun = periodReturn, period = "daily", type = "log", col_rename = "daily_return") %>% 
+  mutate(abs_return = abs(daily_return))
+
+# second return tibble
+r_2 <- return_tbl %>% 
+  select(symbol, date, daily_return) %>% 
+  spread(symbol, daily_return)
+
+# return tibble as date
+r_2 <- xts(r_2, r_2$date)[-1, ]
+
+# storing as numeric
+storage.mode(r_2) <- "numeric"
+
+# removing the first row
+r_2 <- r_2[, -1]
+
+# getting return correlations
+r_corr <- apply.monthly(r_2, FUN = cor)[,c(2, 3,4, 7, 8, 12 )]
+# r_corr <- apply.monthly(r_2, FUN = cor)
+
+# creating column names for correlations
+# colnames(r_corr) <- c("DIS_NFLX", "DIS_CMCSA", "NFLX_CMCSA")
+colnames(r_corr) <- c("DIS_NFLX", "DIS_CMCSA", "DIS_DISH", "NFLX_CMCSA","NFLX_DISH", "CMCSA_DISH")
+
+# return volatility
+r_vols <- apply.monthly(r_2, FUN = colSds)
+
+# correlation table
+corr_tbl <- r_corr %>% 
+  as_tibble() %>% 
+  mutate(date = index(r_corr)) %>% 
+  gather(key = assets, value = corr, -date)
+
+vols_tbl <- r_vols %>% 
+  as_tibble() %>% 
+  mutate(date = index(r_vols)) %>% 
+  gather(key = assets, value = vols, -date) 
+
+# correlation and volume
+corr_vols <- merge(r_corr, r_vols)
+
+# correlation and volume as a table
+corr_vols_tbl <- corr_vols %>% 
+  as_tibble() %>% 
+  mutate(date = index(corr_vols))
+
+# THIS IS NOT BEING USED
+# n <-  10000 # lots of trials, each a "day" or an "hour"
+# z <- rt(n, df = 30)
+# garch_sim_t <- function(n = 1000, df = 30, omega = 0.1, alpha = 0.8, phi = 0.05, mu = 0.01){
+#   n <- n # lots of trials, each a "day" or an "hour"
+#   # set.seed(seed)
+#   z <- rt(n, df = df)
+#   e <-  z # store variates
+#   y <-  z # returns: store again in a different place
+#   sig2 <-  z^2 # create volatility series
+#   omega <-  omega #base variance
+#   alpha <-  alpha #vols Markov dependence on previous variance
+#   phi <-  phi # returns Markov dependence on previous period
+#   mu <-  mu # average return
+#   for (t in 2:n) { # Because of lag start at second
+#     e[t] <- sqrt(sig2[t])*z[t]           # 1. e is conditional on sig
+#     y[t] <-  mu + phi*(y[t-1]-mu) + e[t] # 2. generate returns
+#     sig2[t+1] <-  omega + alpha * e[t]^2 # 3. generate new sigma^2
+#     }
+#   return <- list(
+#     sim_df_vbl <- data_frame(t = 1:n, z = z, y = y, e = e, sig = sqrt(sig2)[-(n+1)] ),
+#     sim_df_title <- data_frame(t = 1:n, "1. Unconditional innovations" = z, "4. Conditional returns" = y, "3. Conditional innovations" = e, "2. Conditional volatility" = sqrt(sig2)[-(n+1)] )
+#   )
+# }
+
+
+# convert prices from tibble to xts
+price_etf <- price_tbl %>%
+  spread(symbol, price)
+
+price_etf <- xts(price_etf, price_etf$date)
+
+#select(DIS, NFLX, CMCSA, DISH) # 3 risk factors (rf)
+storage.mode(price_etf) <- "numeric"
+
+price_etf <- price_etf[, -1]
+
+price_0 <- as.numeric(tail(price_etf, 1))
+
+shares <- c(60000, 75000, 50000)
+
+#price_last <- price_etf[length(price_etf$DIS), 3:5] #(DIS, NFLX, CMCSA) %>% as.vector()
+w <- as.numeric(shares * price_0)
+return_hist <- r_2
+# Fan these across the length and breadth of the risk factor series
+weights_rf <- matrix(w, nrow=nrow(return_hist), ncol=ncol(return_hist), byrow=TRUE)
+## We need to compute exp(x) - 1 for very small x: expm1 accomplishes this
+loss_rf <- -rowSums(expm1(return_hist) * weights_rf)
+loss_df <- data_frame(loss = loss_rf, distribution = rep("historical", each = length(loss_rf)))
+#
+ES_calc <- function(data, prob){
+  threshold <- quantile(data, prob)
+  result <- mean(data[data > threshold])
+}
+#
+n_sim <- 1000
+n_sample <- 100
+prob <- 0.95
+ES_sim <- replicate(n_sim, ES_calc(sample(loss_rf, n_sample, replace = TRUE), prob))
+summary(ES_sim)
+#
+#summary(ES_sim)
+#
+# mean excess plot to determine thresholds for extreme event management
+data <- as.vector(loss_rf) # data is purely numeric
+umin <-  min(data)         # threshold u min
+umax <-  max(data) - 0.1   # threshold u max
+nint <- 100                # grid length to generate mean excess plot
+grid_0 <- numeric(nint)    # grid store
+e <- grid_0                # store mean exceedances e
+upper <- grid_0            # store upper confidence interval
+lower <- grid_0            # store lower confidence interval
+u <- seq(umin, umax, length = nint) # threshold u grid
+alpha <- 0.95                  # confidence level
+for (i in 1:nint) {
+    data <- data[data > u[i]]  # subset data above thresholds
+    e[i] <- mean(data - u[i])  # calculate mean excess of threshold
+    sdev <- sqrt(var(data))    # standard deviation
+    n <- length(data)          # sample size of subsetted data above thresholds
+    upper[i] <- e[i] + (qnorm((1 + alpha)/2) * sdev)/sqrt(n) # upper confidence interval
+    lower[i] <- e[i] - (qnorm((1 + alpha)/2) * sdev)/sqrt(n) # lower confidence interval
+  }
+mep_df <- data.frame(threshold = u, threshold_exceedances = e, lower = lower, upper = upper)
+loss_excess <- loss_rf[loss_rf > u] - u
+quantInv <- function(distr, value) ecdf(distr)(value)
+u_prob <- quantInv(loss_rf, 200000)
+ES_mep <- mean(loss_rf[loss_rf > u_prob])
+stat_fun <- function(x, na.rm = TRUE, ...) {
+  library(moments)
+    # x     = numeric vector
+    # na.rm = boolean, whether or not to remove NA's
+    # ...   = additional args passed to quantile
+    c(mean     = mean(x, na.rm = na.rm),
+      stdev    = sd(x, na.rm = na.rm),
+      skewness = skewness(x, na.rm = na.rm),
+      kurtosis = kurtosis(x, na.rm = na.rm),
+      quantile(x, na.rm = na.rm, ...))
+}
+#
+contract <- 1 # billion
+working <- 0.100 # billion
+sigma_wc <- 0.025 # billion
+sigma <- 0.25
+threshold <- -0.12 # percentage return
+alpha <- 0.05 # tolerance
+risky <- 0.1 # percentage return on the risky asset
+riskless <- 0.02 # time value of cash -- no risk
+z_star <- qnorm(alpha)
+w <- (threshold-riskless) / (risky - riskless + sigma*z_star)# Tukey-Box-Hunter fence analysis of outliers
+#
+k <- 1:20 # days in a business month
+col_names <- paste0("lag_", k)
+#
+# remove abs_return the fourth column
+return_lags <- return_tbl[, -4] %>%
+  tq_mutate(
+  select     = daily_return,
+  mutate_fun = lag.xts,
+  k          = k,
+  col_rename = col_names
+  )
+return_autocors <- return_lags %>%
+  gather(key = "lag", value = "lag_value", -c(symbol, date, daily_return)) %>%
+  mutate(lag = str_sub(lag, start = 5) %>% as.numeric) %>%
+  group_by(symbol, lag) %>%
+  summarize(
+    cor = cor(x = daily_return, y = lag_value, use = "pairwise.complete.obs"),
+    upper_95 = 2/(n())^0.5,
+    lower_95 = -2/(n())^0.5
+  )
+return_absautocors <- return_autocors %>%
+  ungroup() %>%
+  mutate(
+    lag = as_factor(as.character(lag)),
+    cor_abs = abs(cor)
+  ) %>%
+  select(lag, cor_abs) %>%
+  group_by(lag)
+#
+## INPUTS: r vector
+## OUTPUTS: list of scalars (mean, sd, median, skewness, kurtosis)
+data_moments <- function(data){
+  library(moments)
+  library(matrixStats)
+  mean <- colMeans(data)
+  median <- colMedians(data)
+  sd <- colSds(data)
+  IQR <- colIQRs(data)
+  skewness <- skewness(data)
+  kurtosis <- kurtosis(data)
+  result <- data.frame(mean = mean, median = median, std_dev = sd, IQR = IQR, skewness = skewness, kurtosis = kurtosis)
+  return(result)
+}
+#
+#
+port_sample <- function(return, n_sample = 252, stat = "mean")
+{
+  R <-  return # daily returns
+  n <- dim(R)[1]
+  N <- dim(R)[2]
+  R_boot <-  R[sample(1:n, n_sample),] # sample returns
+  r_free <- 0.03 / 252 # daily
+  mean_vect <-  apply(R_boot,2,mean)
+  cov_mat <-  cov(R_boot)
+  sd_vect <-  sqrt(diag(cov_mat))
+  A_mat <-  cbind(rep(1,N),mean_vect)
+  mu_P <-  seq(-.01,.01,length=300)
+  sigma_P <-  mu_P
+  weights <-  matrix(0,nrow=300,ncol=N)
+  for (i in 1:length(mu_P))
+  {
+    b_vec <-  c(1,mu_P[i])
+    result <-
+      solve.QP(Dmat=2*cov_mat,dvec=rep(0,N),Amat=A_mat,bvec=b_vec,meq=2)
+    sigma_P[i] <-  sqrt(result$value)
+    weights[i,] <-  result$solution
+  }
+  sharpe <- (mu_P - r_free)/sigma_P ## compute Sharpe's ratios
+  ind_max <-  (sharpe == max(sharpe)) ## Find maximum Sharpe's ratio
+  ind_min <-  (sigma_P == min(sigma_P)) ## find the minimum variance portfolio
+  ind_eff <-  (mu_P > mu_P[ind_min]) ## finally the efficient fr(aes(x = 0, y = r_free), colour = "red")ontier
+  result <- switch(stat,
+    "mean"  = mu_P[ind_max],
+    "sd"    = sigma_P[ind_max]
+    )
+  return(result)
+}
+#
+```
+
+Context
+==============================================
+
+column{.tabset}
+------------------------------------------------------
+
+### The business situation
+The traditional entertainment industry is currently being distrupted by a litany of streaming options. Our company, Disney, wants to evolve with the industry. Our CEO has tasked us with investigating if we should invest in a streaming service.
+
+**The Plan** 
+To make an informed decision, on whether our company should invest tens of millions of dollars into creating our own streaming service, we will analyze our stock, as well as 3 other companies' stocks: Comcast, Netflix and Dish.   By researching and analyzing the returns and volatility in antecedent stock prices, we will formulate our response to our CEO.
+
+**Complications** 
+Dish and Comcast provide interent and phone service. Disney owns mutliple production companies, amusement parks, merchandise stores, and sports teams.
+
+***Key Questions*** 
+
+1) How do we characterize stocks variability and the impact of one market on another?
+
+2) What are the best combinations of stocks drivers?
+
+3) How much capital is needed to support a stocks earnings stream?
+
+4) How should the company plan to meet risk tolerances and thresholds for losses?
+
+### Data and workflow
+
+For the traditional entertainment industry we are selecting: 
+
+- Comcast (CMCSA) for cable, 
+
+- Dish (DISH) for satellite, 
+
+For the streaming entertainment industry we are selecting: 
+
+- Netflix (NFLX)
+
+Our company:
+
+- Disney (DIS)
+
+
+Our process includes:
+
+- Exploratory data analysis making comparisons among all companies, streaming, and traditional entertainment industry, viewing market relationships
+
+- Reviewing the facts found among volatility and relationships among these selected representative markets
+
+- Create market risk measures for these factors
+
+
+
+
+<!-- Exploratory Analysis -->
+<!-- ============================================== -->
+
+<!-- column{.sidebar} -->
+<!-- ------------------------------------------------------ -->
+
+<!-- #### Initial Thoughts -->
+<!-- The streaming services have higher stock prices than Disney, with Amazon having a much higher value than the others. Disney and Netflix had similar prices between 2010 to about 2016, but in recent years Netflix price has risen noticibly above Disney's. Meanwhile, Disney's stock price is above all the traditional entertainment industry companies it was compared to. -->
+
+
+<!-- #### Outliers  -->
+<!-- Amazon's price is many times that of all other companies in terms of price. This is a complication, because it is not solely a streaming service; they have a vast variety of services that are provided, and their high value does not necessarily reflect on the success of their streaming service. -->
+
+<!-- ```{r} -->
+
+<!-- ``` -->
+<!-- column {.tabset} -->
+<!-- ---------------------------------------------------- -->
+
+<!-- ### Exploratory Analysis All Companies  -->
+
+<!-- ```{r} -->
+<!-- #Exploratory analysis  -->
+<!-- ggplot(price_tbl, aes(date, price, color = symbol)) + geom_line() + labs(color = "Stock") + scale_color_discrete(labels = c("Amazon", "Comcast", "Disney", "Dish", "Netflix", "AT&T")) -->
+<!-- ``` -->
+
+<!-- ### Streaming: Amazon and Netflix compared to Disney -->
+
+<!-- ```{r} -->
+<!-- amzn_subset <- subset(price_tbl, symbol == "AMZN") -->
+<!-- nflx_subset <- subset(price_tbl, symbol == "NFLX") -->
+<!-- disney_sub <- subset(price_tbl, symbol == "DIS") -->
+
+<!-- streaming_subset <- rbind(amzn_subset, nflx_subset, disney_sub) -->
+
+<!-- ggplot(streaming_subset, aes(date, price, color = symbol)) + geom_line() + labs(color = "Stock") + scale_color_discrete(labels = c("Amazon", "Disney", "Netflix")) -->
+<!-- ``` -->
+
+<!-- ### Traditional: Comcast, Dish, AT&T compared to Disney -->
+
+<!-- ```{r} -->
+<!-- comcast_sub <- subset(price_tbl, symbol == "CMCSA") -->
+<!-- dish_sub <- subset(price_tbl, symbol == "DISH") -->
+<!-- t_sub <- subset(price_tbl, symbol == "T") -->
+
+<!-- traditional_subset <- rbind(comcast_sub, dish_sub, t_sub, disney_sub) -->
+
+<!-- ggplot(traditional_subset, aes(date, price, color = symbol)) + geom_line() + labs(color = "Stock") + scale_color_discrete(labels = c("Comcast", "Disney", "Dish", "AT&T")) -->
+<!-- ``` -->
+
+
+<!-- Returns -->
+<!-- ======================================================================= -->
+
+<!-- column {.sidebar} -->
+<!-- ---------------------------------------------------- -->
+
+<!--  Summary  -->
+
+<!-- #### Overall -->
+
+<!-- Notes -->
+
+<!-- #### Persistence -->
+
+<!-- Notes -->
+
+<!-- #### Outliers -->
+
+<!-- Notes -->
+
+<!-- column {.tabset} -->
+<!-- ---------------------------------------------------- -->
+
+<!-- ### Entertainment Options -->
+
+<!-- ```{r moments} -->
+<!-- vis <- r_2[c("NFLX", "CMCSA", "DISH", "DIS", "T", "AMZN")] -->
+<!-- if(!is.matrix(vis)) vis <- rbind(vis, deparse.level = 0L) -->
+<!-- pairs.panels(vis) -->
+<!-- ``` -->
+
+<!-- ### AMZN -->
+
+<!-- ```{r} -->
+<!-- ggtsdisplay(r_2$AMZN, plot.type = "histogram", main = "AMZN daily returns") -->
+<!-- ``` -->
+
+<!-- ### CMCSA -->
+
+<!-- ```{r} -->
+<!-- ggtsdisplay(r_2$CMCSA, plot.type = "histogram", main = "CMCSA daily returns") -->
+<!-- ``` -->
+
+<!-- ### DIS -->
+
+<!-- ```{r} -->
+<!-- ggtsdisplay(r_2$DIS, plot.type = "histogram", main = "DIS daily returns") -->
+<!-- ``` -->
+
+<!-- ### DISH -->
+
+<!-- ```{r} -->
+<!-- ggtsdisplay(r_2$DISH, plot.type = "histogram", main = "DISH daily returns") -->
+<!-- ``` -->
+
+<!-- ### NFLX -->
+
+<!-- ```{r} -->
+<!-- ggtsdisplay(r_2$NFLX, plot.type = "histogram", main = "NFLX daily returns") -->
+<!-- ``` -->
+
+
+<!-- ### T -->
+
+<!-- ```{r} -->
+<!-- ggtsdisplay(r_2$T, plot.type = "histogram", main = "T daily returns") -->
+<!-- ``` -->
+
+
+<!-- ### Return persistence -->
+
+<!-- ```{r plotreturnabscors, exercise = TRUE} -->
+<!-- k <- 1:20 # days in a business month -->
+<!-- col_names <- paste0("lag_", k) -->
+
+<!-- return_lags <- return_tbl[, -4] %>% -->
+<!--   tq_mutate( -->
+<!--   select     = daily_return, -->
+<!--   mutate_fun = lag.xts, -->
+<!--   k          = k, -->
+<!--   col_rename = col_names -->
+<!--   ) -->
+<!-- return_autocors <- return_lags %>% -->
+<!--   gather(key = "lag", value = "lag_value", -c(symbol, date, daily_return)) %>% -->
+<!--   mutate(lag = str_sub(lag, start = 5) %>% as.numeric) %>% -->
+<!--   group_by(symbol, lag) %>% -->
+<!--   summarize( -->
+<!--     cor = cor(x = daily_return, y = lag_value, use = "pairwise.complete.obs"), -->
+<!--     upper_95 = 2/(n())^0.5, -->
+<!--     lower_95 = -2/(n())^0.5 -->
+<!--   ) -->
+<!-- return_absautocors <- return_autocors %>% -->
+<!--   ungroup() %>% -->
+<!--   mutate( -->
+<!--     lag = as_factor(as.character(lag)), -->
+<!--     cor_abs = abs(cor) -->
+<!--   ) %>% -->
+<!--   select(lag, cor_abs) %>% -->
+<!--   group_by(lag) -->
+
+<!-- upper_bound <- 1.5*IQR(return_absautocors$cor_abs) %>% signif(3) -->
+<!-- p <- return_absautocors %>%     -->
+<!--       ggplot(aes(x = fct_reorder(lag, cor_abs, .desc = TRUE) , y = cor_abs)) + -->
+<!--       # Add boxplot -->
+<!--       geom_boxplot(color = palette_light()[[1]]) + -->
+<!--       # Add horizontal line at outlier break point -->
+<!--       geom_hline(yintercept = upper_bound, color = "red") + -->
+<!--       annotate("text", label = paste0("Outlier threshold = ", upper_bound),  -->
+<!--         x = 24.5, y = upper_bound + .03, color = "red") + -->
+<!--       # Aesthetics -->
+<!--       expand_limits(y = c(0, 0.1)) + -->
+<!--       theme_tq() + -->
+<!--       labs( -->
+<!--         title = paste0("Absolute Autocorrelations: Lags ", rlang::expr_text(k)), -->
+<!--         x = "Lags" -->
+<!--         ) + -->
+<!--       theme( -->
+<!--         legend.position = "none", -->
+<!--         axis.text.x = element_text(angle = 45, hjust = 1) -->
+<!--         ) -->
+<!-- ggplotly(p) -->
+<!-- ``` -->
+
+
+
+
+Returns
+=======================================================================
+
+column {.sidebar}
+----------------------------------------------------
+
+DIS 
+
+```{r}
+library(knitr)
+return_plot <- return_tbl %>% select(date, symbol, daily_return) %>% spread(symbol, daily_return)
+measures = c("skewness", "kurtosis")
+values = c(skewness(return_plot$DIS), kurtosis(return_plot$DIS))
+df = data.frame(measures, values)
+kable(df)
+```
+
+NFLX
+
+```{r}
+measures = c("skewness", "kurtosis")
+values = c(skewness(return_plot$NFLX), kurtosis(return_plot$NFLX))
+df = data.frame(measures, values)
+kable(df)
+```
+
+CMCSA
+
+```{r}
+measures = c("skewness", "kurtosis")
+values = c(skewness(return_plot$CMCSA), kurtosis(return_plot$CMCSA))
+df = data.frame(measures, values)
+kable(df)
+```
+
+DISH
+
+```{r}
+measures = c("skewness", "kurtosis")
+values = c(skewness(return_plot$DISH), kurtosis(return_plot$DISH))
+df = data.frame(measures, values)
+kable(df)
+```
+
+**Returns Persistence**
+
+The absolute correlation threshold is 2.7%, majority or the absolute return fall below the threshold. This shows that the correlation between the stocks are rarely volatile. Some returns do exceed the outlier threshold which can impact the future returns depending onthe direction of the return (negative or positive)
+
+
+column {.tabset}
+----------------------------------------------------
+
+### Stocks
+
+```{r}
+return_plot <- return_tbl %>% select(date, symbol, daily_return) %>% spread(symbol, daily_return)
+# ggpairs(return_plot)
+# pairs.panels(return_plot())
+
+vis <- return_plot[c("NFLX", "CMCSA", "DISH", "DIS")]
+if(!is.matrix(vis)) vis <- rbind(vis, deparse.level = 0L)
+pairs.panels(vis)
+
+```
+
+### DIS
+
+Disney
+
+```{r}
+ggtsdisplay(return_plot$DIS, plot.type = "histogram", main = "DIS daily returns")
+```
+
+### NFLX
+
+```{r}
+ggtsdisplay(return_plot$NFLX, plot.type = "histogram", main = "NFLX daily returns")
+```
+
+### CMCSA
+
+```{r}
+ggtsdisplay(return_plot$CMCSA, plot.type = "histogram", main = "CMCSA daily returns")
+```
+
+### DISH
+
+```{r}
+ggtsdisplay(return_plot$DISH, plot.type = "histogram", main = "DISH daily returns")
+```
+
+### Return persistence
+
+```{r, exercise = TRUE}
+# Tukey's fence
+upper_bound <- 1.5*IQR(return_absautocors$cor_abs) %>% signif(3)
+p <- return_absautocors %>%    
+      ggplot(aes(x = fct_reorder(lag, cor_abs, .desc = TRUE) , y = cor_abs)) +
+      # Add boxplot
+      geom_boxplot(color = palette_light()[[1]]) +
+      # Add horizontal line at outlier break point
+      geom_hline(yintercept = upper_bound, color = "red") +
+      annotate("text", label = paste0("Outlier threshold = ", upper_bound), 
+        x = 24.5, y = upper_bound + .03, color = "red") +
+      # Aesthetics
+      expand_limits(y = c(0, 0.5)) +
+      theme_tq() +
+      labs(
+        title = paste0("Absolute Autocorrelations: Lags ", rlang::expr_text(k)),
+        x = "Lags"
+        ) +
+      theme(
+        legend.position = "none",
+        axis.text.x = element_text(angle = 45, hjust = 1)
+        )
+ggplotly(p)
+```
+
+
+Volatility
+====================================================
+
+column {.sidebar}
+----------------------------------------------------
+
+DIS 
+
+```{r}
+measures = c("skewness", "kurtosis")
+values = c(skewness(r_vols$DIS), kurtosis(r_vols$DIS))
+df = data.frame(measures, values)
+kable(df)
+```
+
+NFLX 
+
+```{r}
+measures = c("skewness", "kurtosis")
+values = c(skewness(r_vols$NFLX), kurtosis(r_vols$NFLX))
+df = data.frame(measures, values)
+kable(df)
+```
+
+CMCSA 
+
+```{r}
+measures = c("skewness", "kurtosis")
+values = c(skewness(r_vols$CMCSA), kurtosis(r_vols$CMCSA))
+df = data.frame(measures, values)
+kable(df)
+```
+
+DISH 
+
+```{r}
+measures = c("skewness", "kurtosis")
+values = c(skewness(r_vols$DISH), kurtosis(r_vols$DISH))
+df = data.frame(measures, values)
+kable(df)
+```
+
+DIS-NFLX 
+
+```{r}
+measures = c("skewness", "kurtosis")
+values = c(skewness(r_corr$DIS_NFLX), kurtosis(r_corr$DIS_NFLX))
+df = data.frame(measures, values)
+kable(df)
+```
+
+DIS-CMCSA 
+
+```{r}
+measures = c("skewness", "kurtosis")
+values = c(skewness(r_corr$DIS_CMCSA), kurtosis(r_corr$DIS_CMCSA))
+df = data.frame(measures, values)
+kable(df)
+```
+
+DIS-DISH 
+
+```{r}
+measures = c("skewness", "kurtosis")
+values = c(skewness(r_corr$DIS_DISH), kurtosis(r_corr$DIS_DISH))
+df = data.frame(measures, values)
+kable(df)
+```
+
+NFLX-CMCSA 
+
+```{r}
+measures = c("skewness", "kurtosis")
+values = c(skewness(r_corr$NFLX_CMCSA), kurtosis(r_corr$NFLX_CMCSA))
+df = data.frame(measures, values)
+kable(df)
+```
+
+NFLX-DISH 
+
+```{r}
+measures = c("skewness", "kurtosis")
+values = c(skewness(r_corr$NFLX_DISH), kurtosis(r_corr$NFLX_DISH))
+df = data.frame(measures, values)
+kable(df)
+```
+
+CMCSA-DISH
+
+```{r}
+measures = c("skewness", "kurtosis")
+values = c(skewness(r_corr$CMCSA_DISH), kurtosis(r_corr$CMCSA_DISH))
+df = data.frame(measures, values)
+kable(df)
+```
+
+
+column {.tabset}
+----------------------------------------------------
+
+### DIS
+
+```{r}
+ggtsdisplay(r_vols$DIS, plot.type = "histogram", main = "DIS monthly volatility")
+```
+
+### NFLX
+
+```{r}
+ggtsdisplay(r_vols$NFLX, plot.type = "histogram", main = "NFLX monthly volatility")
+```
+
+### CMCSA
+
+```{r}
+ggtsdisplay(r_vols$CMCSA, plot.type = "histogram", main = "CMCSA monthly volatility")
+```
+
+### DISH
+
+```{r}
+ggtsdisplay(r_vols$DISH, plot.type = "histogram", main = "DISH monthly volatility")
+```
+
+
+column {.tabset}
+----------------------------------------------------
+
+### DIS-NFLX
+
+```{r}
+ggtsdisplay(r_corr$DIS_NFLX, plot.type = "histogram", main = "DIS-NFLX monthly correlation")
+```
+
+Notes:
+
+
+### DIS-CMCSA
+
+```{r}
+ggtsdisplay(r_corr$DIS_CMCSA, plot.type = "histogram", main = "DIS-CMCSA monthly correlation")
+```
+
+
+### DIS-DISH
+
+```{r}
+ggtsdisplay(r_corr$DIS_DISH, plot.type = "histogram", main = "DIS-DISH monthly correlation")
+```
+
+
+### NFLX-CMCSA
+
+```{r}
+ggtsdisplay(r_corr$NFLX_CMCSA, plot.type = "histogram", main = "NFLX-CMCSA monthly correlation")
+```
+
+
+
+### NFLX-DISH
+
+```{r}
+ggtsdisplay(r_corr$NFLX_DISH, plot.type = "histogram", main = "NFLX-DISH monthly correlation")
+```
+
+
+
+### CMCSA-DISH
+
+```{r}
+ggtsdisplay(r_corr$CMCSA_DISH, plot.type = "histogram", main = "CMCSA-DISH monthly correlation")
+```
+
+
+
+### DIS-NFLX market spillover
+
+```{r rqplot-DIS-NFLX}
+p <- ggplot(corr_vols_tbl,  aes(x = NFLX, y = DIS_NFLX)) +
+    geom_point() + 
+    ggtitle("DIS-NFLX Interaction") + 
+    geom_quantile(quantiles = c(0.10, 0.90)) + 
+    geom_quantile(quantiles = 0.5, linetype = "longdash") +
+    geom_density_2d(colour = "red")  
+ggplotly(p)
+```
+
+### DIS-CMCSA market spillover
+
+```{r rqplot-DIS-CMCSA}
+p <- ggplot(corr_vols_tbl,  aes(x = CMCSA, y = DIS_CMCSA)) +
+    geom_point() + 
+    ggtitle("DIS-CMCSA Interaction") + 
+    geom_quantile(quantiles = c(0.10, 0.90)) + 
+    geom_quantile(quantiles = 0.5, linetype = "longdash") +
+    geom_density_2d(colour = "red")  
+ggplotly(p)
+```
+
+### DIS-DISH market spillover
+
+```{r rqplot-DIS-DISH}
+p <- ggplot(corr_vols_tbl,  aes(x = DISH, y = DIS_DISH)) +
+    geom_point() + 
+    ggtitle("DIS-DISH Interaction") + 
+    geom_quantile(quantiles = c(0.10, 0.90)) + 
+    geom_quantile(quantiles = 0.5, linetype = "longdash") +
+    geom_density_2d(colour = "red")  
+ggplotly(p)
+```
+
+### NFLX-CMCSA market spillover
+
+```{r rqplot-NFLX-CMCSA}
+p <- ggplot(corr_vols_tbl,  aes(x = NFLX, y = NFLX_CMCSA)) +
+    geom_point() + 
+    ggtitle("NFLX-CMCSA Interaction") + 
+    geom_quantile(quantiles = c(0.10, 0.90)) + 
+    geom_quantile(quantiles = 0.5, linetype = "longdash") +
+    geom_density_2d(colour = "red")  
+ggplotly(p)
+```
+
+### NFLX-DISH market spillover
+
+```{r rqplot-NFLX-DISH}
+p <- ggplot(corr_vols_tbl,  aes(x = NFLX, y = NFLX_DISH)) +
+    geom_point() + 
+    ggtitle("NFLX-DISH Interaction") + 
+    geom_quantile(quantiles = c(0.10, 0.90)) + 
+    geom_quantile(quantiles = 0.5, linetype = "longdash") +
+    geom_density_2d(colour = "red")  
+ggplotly(p)
+```
+
+### CMCSA-DISH market spillover
+
+```{r rqplot-CMCSA-DISH}
+p <- ggplot(corr_vols_tbl,  aes(x = CMCSA, y = CMCSA_DISH)) +
+    geom_point() + 
+    ggtitle("CMCSA-DISH Interaction") + 
+    geom_quantile(quantiles = c(0.10, 0.90)) + 
+    geom_quantile(quantiles = 0.5, linetype = "longdash") +
+    geom_density_2d(colour = "red")  
+ggplotly(p)
+```
+
+
+
+Loss
+============================================
+
+column {.sidebar}
+----------------------------------------------------
+
+ Pure plays 
+
+### DIS only
+
+Notes
+
+### NFLX only
+
+Notes
+
+### CMCSA only
+
+Notes
+
+### DISH only
+
+Notes
+
+
+column {.tabset}
+--------------------------------------------
+
+### DIS 
+
+```{r DISloss}
+#
+shares <- c(-215000, 0, 0)
+price_last <- c(1, 0, 0) * price_0 #(DIS, NFLX, CMCSA) %>% as.vector()
+w <- as.numeric(shares * price_last)
+return_hist <- r_2
+# Fan these across the length and breadth of the risk factor series
+weights_rf <- matrix(w, nrow=nrow(return_hist), ncol=ncol(return_hist), byrow=TRUE)
+## We need to compute exp(x) - 1 for very small x: expm1 accomplishes this
+loss_rf <- -rowSums(expm1(return_hist) * weights_rf)
+loss_df <- data_frame(loss = loss_rf, distribution = rep("historical", each = length(loss_rf)))
+#
+ES_calc <- function(data, prob){
+  threshold <- quantile(data, prob)
+  result <- mean(data[data > threshold])
+}
+#
+n_sim <- 1000
+n_sample <- 100
+prob <- 0.95
+ES_sim <- replicate(n_sim, ES_calc(sample(loss_rf, n_sample, replace = TRUE), prob))
+#
+sim <- ES_sim
+low <- quantile(sim, 0.025)
+high <- quantile(sim, 0.975)
+sim_df <- data_frame(sim = sim)
+title <- "DIS: Expected Shortfall simulation"
+p <- ggplot(data = sim_df, aes(x = sim))
+p <- p + geom_histogram(binwidth = 1000, aes(y = 1000*(..density..)), alpha = 0.4)
+p <- p + ggtitle(title)
+p <- p + geom_vline(xintercept = low, color = "red", size = 1.5 ) + geom_vline(xintercept = high, color = "red", size = 1.5)
+p <- p + annotate("text", x = low, y = 0.01, label = paste("L = ", round(low, 2))) + annotate("text", x = high, y = 0.01, label = paste("U = ", round(high, 2))) + ylab("density") + xlab("expected shortfall") + theme_bw()
+ggplotly(p)
+```
+
+### NFLX
+
+```{r NFLXloss}
+#
+shares <- c(0, 284000, 0)
+price_last <- c(0, 1, 0) * price_0
+w <- as.numeric(shares * price_last)
+return_hist <- r_2
+# Fan these across the length and breadth of the risk factor series
+weights_rf <- matrix(w, nrow=nrow(return_hist), ncol=ncol(return_hist), byrow=TRUE)
+## We need to compute exp(x) - 1 for very small x: expm1 accomplishes this
+loss_rf <- -rowSums(expm1(return_hist) * weights_rf)
+loss_df <- data_frame(loss = loss_rf, distribution = rep("historical", each = length(loss_rf)))
+#
+ES_calc <- function(data, prob){
+  threshold <- quantile(data, prob)
+  result <- mean(data[data > threshold])
+}
+#
+n_sim <- 1000
+n_sample <- 100
+prob <- 0.95
+ES_sim <- replicate(n_sim, ES_calc(sample(loss_rf, n_sample, replace = TRUE), prob))
+#
+sim <- ES_sim
+low <- quantile(sim, 0.025)
+high <- quantile(sim, 0.975)
+sim_df <- data_frame(sim = sim)
+title <- "NFLX: Expected Shortfall simulation"
+p <- ggplot(data = sim_df, aes(x = sim))
+p <- p + geom_histogram(binwidth = 1000, aes(y = 1000*(..density..)), alpha = 0.4)
+p <- p + ggtitle(title)
+p <- p + geom_vline(xintercept = low, color = "red", size = 1.5 ) + geom_vline(xintercept = high, color = "red", size = 1.5)
+p <- p + annotate("text", x = low, y = 0.01, label = paste("L = ", round(low, 2))) + annotate("text", x = high, y = 0.01, label = paste("U = ", round(high, 2))) + ylab("density") + xlab("expected shortfall") + theme_bw()
+ggplotly(p)
+```
+
+### CMCSA
+
+```{r CMCSAloss}
+#
+shares <- c(0, 0, 12500)
+price_last <- c(0, 0, 1) * price_0
+return_hist <- r_2
+# Fan these across the length and breadth of the risk factor series
+weights_rf <- matrix(w, nrow=nrow(return_hist), ncol=ncol(return_hist), byrow=TRUE)
+## We need to compute exp(x) - 1 for very small x: expm1 accomplishes this
+loss_rf <- -rowSums(expm1(return_hist) * weights_rf)
+loss_df <- data_frame(loss = loss_rf, distribution = rep("historical", each = length(loss_rf)))
+#
+ES_calc <- function(data, prob){
+  threshold <- quantile(data, prob)
+  result <- mean(data[data > threshold])
+}
+#
+n_sim <- 1000
+n_sample <- 100
+prob <- 0.95
+ES_sim <- replicate(n_sim, ES_calc(sample(loss_rf, n_sample, replace = TRUE), prob))
+#
+sim <- ES_sim
+low <- quantile(sim, 0.025)
+high <- quantile(sim, 0.975)
+sim_df <- data_frame(sim = sim)
+title <- "CMCSA: Expected Shortfall simulation"
+p <- ggplot(data = sim_df, aes(x = sim))
+p <- p + geom_histogram(binwidth = 1000, aes(y = 1000*(..density..)), alpha = 0.4)
+p <- p + ggtitle(title)
+p <- p + geom_vline(xintercept = low, color = "red", size = 1.5 ) + geom_vline(xintercept = high, color = "red", size = 1.5)
+p <- p + annotate("text", x = low, y = 0.01, label = paste("L = ", round(low, 2))) + annotate("text", x = high, y = 0.01, label = paste("U = ", round(high, 2))) + ylab("density") + xlab("expected shortfall") + theme_bw()
+ggplotly(p)
+```
+
+
+### DISH
+
+```{r DISHloss}
+#
+shares <- c(0, 0, 12500)
+price_last <- c(0, 0, 1) * price_0
+return_hist <- r_2
+# Fan these across the length and breadth of the risk factor series
+weights_rf <- matrix(w, nrow=nrow(return_hist), ncol=ncol(return_hist), byrow=TRUE)
+## We need to compute exp(x) - 1 for very small x: expm1 accomplishes this
+loss_rf <- -rowSums(expm1(return_hist) * weights_rf)
+loss_df <- data_frame(loss = loss_rf, distribution = rep("historical", each = length(loss_rf)))
+#
+ES_calc <- function(data, prob){
+  threshold <- quantile(data, prob)
+  result <- mean(data[data > threshold])
+}
+#
+n_sim <- 1000
+n_sample <- 100
+prob <- 0.95
+ES_sim <- replicate(n_sim, ES_calc(sample(loss_rf, n_sample, replace = TRUE), prob))
+#
+sim <- ES_sim
+low <- quantile(sim, 0.025)
+high <- quantile(sim, 0.975)
+sim_df <- data_frame(sim = sim)
+title <- "DISH: Expected Shortfall simulation"
+p <- ggplot(data = sim_df, aes(x = sim))
+p <- p + geom_histogram(binwidth = 1000, aes(y = 1000*(..density..)), alpha = 0.4)
+p <- p + ggtitle(title)
+p <- p + geom_vline(xintercept = low, color = "red", size = 1.5 ) + geom_vline(xintercept = high, color = "red", size = 1.5)
+p <- p + annotate("text", x = low, y = 0.01, label = paste("L = ", round(low, 2))) + annotate("text", x = high, y = 0.01, label = paste("U = ", round(high, 2))) + ylab("density") + xlab("expected shortfall") + theme_bw()
+ggplotly(p)
+```
+
+
+Allocation
+============================================
+
+column {.sidebar}
+--------------------------------------------
+
+```{r eff-frontier-calc}
+R <-  r_2 # daily returns
+n <- dim(R)[1]
+N <- dim(R)[2]
+R_boot <-  R # Professor said try this
+# R_boot <-  R[sample(1:n, 252),] # sample returns
+r_free <- 0.03 / 252 # daily
+mean_vect <-  apply(R_boot,2,mean)
+cov_mat <-  cov(R_boot)
+sd_vect <-  sqrt(diag(cov_mat))
+A_mat <-  cbind(rep(1,N),mean_vect) 
+mu_P <-  seq(-.01,.01,length=300)                              
+sigma_P <-  mu_P 
+weights <-  matrix(0,nrow=300,ncol=N) 
+for (i in 1:length(mu_P))  
+  {
+    b_vec <-  c(1,mu_P[i])  
+    result <-  
+      solve.QP(Dmat=2*cov_mat,dvec=rep(0,N),Amat=A_mat,bvec=b_vec,meq=2)
+    sigma_P[i] <-  sqrt(result$value)
+    weights[i,] <-  result$solution
+} 
+# make a data frame of the mean and standard deviation results
+sigma_mu_df <- data_frame(sigma_P = sigma_P, mu_P = mu_P)
+names_R <- c("DIS", "NFLX", "CMCSA", "DISH")
+# sharpe ratio and minimum variance portfolio analysis
+sharpe <- (mu_P - r_free)/sigma_P ## compute Sharpe's ratios
+ind_max <-  (sharpe == max(sharpe)) ## Find maximum Sharpe's ratio
+ind_min <-  (sigma_P == min(sigma_P)) ## find the minimum variance portfolio
+ind_eff <-  (mu_P > mu_P[ind_min]) ## finally the efficient fr(aes(x = 0, y = r_free), colour = "red")ontier
+w_max <- weights[ind_max,]
+w_min <- weights[ind_min,]
+value <- 1000000
+```
+
+### Optimal weights
+
+We use these maximum Sharpe Ratio weights to form a risky asset loss series:
+
+DIS: `r round(w_max[1] * 100, 2)`%, NFLX: `r round(w_max[2] * 100, 2)`%, CMCSA: `r round(w_max[3] * 100, 2)`%, DISH: `r round(w_max[4] * 100, 2)`% of total portfolio value of USD `r value` with a daily return of `r round(mu_P[ind_max]*100, 2)`% and standard deviation of `r round(sigma_P[ind_max]*100, 2)`% 
+
+These weights will produce a minimum variance portfolio:
+
+DIS: `r round(w_min[1] * 100, 2)`%, NFLX: `r round(w_min[2] * 100, 2)`%, CMCSA: `r round(w_min[3] * 100, 2)`%, DISH: `r round(w_min[4] * 100, 2)`% of total portfolio value of USD `r value` with a daily portfolio return of `r round(mu_P[ind_min]*100, 2)`% and standard deviation of `r round(sigma_P[ind_min]*100, 2)`%
+
+
+### Efficient frontier
+
+Maximum return at sigma_P: 0.017, mu_P: 0.0011
+
+Cash line are exceeds the maximum return
+
+Risky & negative returns at sigma_P: 0.019, mu_P: 0.0003
+
+### Sharpe Mean 
+
+Threshold: L = 0.31 and U = 2.52, this range is large enough to make a significant change in a return.
+
+Most of the daily average is between 0.3 and 1.2 which is just slightly better than the exact threshold
+
+### Tangency Portfolio 
+
+Threshold: L = 3.37 and U = 44.97
+
+This threshold range should give us the most return
+
+Compared to the sharpe mean, the L in the tangency portfolio exceeds the U of the sharpe mean
+
+### Max Sharpe Ratio Loss Threshold 
+
+This measure any loss in excess of the threshold exceedances
+
+The red lines indicate the upper and lower confidence
+
+There is typically less data during the volatility shown for the upper and lower loss thresholds
+
+
+column {.tabset}
+--------------------------------------------
+
+### Efficient frontier
+
+```{r eff-frontier}
+col_P <- ifelse(mu_P > mu_P[ind_min], "blue", "grey") # discriminate efficient and inefficient portfolios
+sigma_mu_df$col_P <- col_P
+p <- ggplot(sigma_mu_df, aes(x = sigma_P, y = mu_P, group = 1))
+p <- p + geom_line(aes(colour=col_P, group = col_P), size = 1.1) + scale_colour_identity() 
+p <- p + geom_abline(intercept = r_free, slope = (mu_P[ind_max]-r_free)/sigma_P[ind_max], color = "red", size = 1.1)
+p <- p + geom_point(aes(x = sigma_P[ind_max], y = mu_P[ind_max]), color = "green", size = 4) 
+p <- p + geom_point(aes(x = sigma_P[ind_min], y = mu_P[ind_min]), color = "red", size = 4) ## show min var portfolio
+#p
+ggplotly(p)
+```
+
+### Sharpe mean CI
+
+```{r sampledmean-ex}
+port_mean <- replicate(1000, port_sample(R, n_sample = 252, stat = "mean"))
+sim <- port_mean * 252
+low <- quantile(sim, 0.025)
+high <- quantile(sim, 0.975)
+sim_df <- data_frame(sim = sim)
+title <- "Tangency portfolio sampled mean simulation"
+p <- ggplot(data = sim_df, aes(x = sim))
+p <- p + geom_histogram(alpha = 0.7)
+p <- p + ggtitle(title)
+p <- p + geom_vline(xintercept = low, color = "red", size = 1.5 ) + geom_vline(xintercept = high, color = "red", size = 1.5)
+p <- p + annotate("text", x = low + 0.01, y = 200, label = paste("L = ", round(low, 2))) + annotate("text", x = high, y = 200, label = paste("U = ", round(high, 2))) + ylab("density") + xlab("daily mean: max Sharpe Ratio") + theme_bw()
+ggplotly(p)
+```
+
+### Sharpe standard deviation CI
+
+```{r sampledsd-ex}
+port_mean <- replicate(1000, port_sample(R, n_sample = 252, stat = "sd"))
+sim <- port_mean * 252
+low <- quantile(sim, 0.025)
+high <- quantile(sim, 0.975)
+sim_df <- data_frame(sim = sim)
+title <- "Tangency portfolio sampled standard deviation simulation"
+p <- ggplot(data = sim_df, aes(x = sim))
+p <- p + geom_histogram(alpha = 0.7)
+p <- p + ggtitle(title)
+p <- p + geom_vline(xintercept = low, color = "red", size = 1.5 ) + geom_vline(xintercept = high, color = "red", size = 1.5)
+p <- p + annotate("text", x = low + 0.1, y = 200, label = paste("L = ", round(low, 2))) + annotate("text", x = high, y = 200, label = paste("U = ", round(high, 2))) + ylab("density") + xlab("daily mean: max Sharpe Ratio") + theme_bw()
+ggplotly(p)
+```
+
+### Max Sharpe Ratio loss thresholds
+
+```{r mepcalc}
+price_last <- price_0
+value <- 1000000 # portfolio value
+w_0 <- w_max # wwights -- e.g., min variance or max sharpe
+shares <- value * (w_0/price_last)
+w <- as.numeric(shares * price_last)
+return_hist <- r_2
+# Fan these across the length and breadth of the risk factor series
+weights_rf <- matrix(w, nrow=nrow(return_hist), ncol=ncol(return_hist), byrow=TRUE)
+## We need to compute exp(x) - 1 for very small x: expm1 accomplishes this
+loss_rf <- -rowSums(expm1(return_hist) * weights_rf)
+loss_df <- data_frame(loss = loss_rf, distribution = rep("historical", each = length(loss_rf)))
+#
+data <- as.vector(loss_rf[loss_rf > 0]) # data is purely numeric
+umin <-  min(data)         # threshold u min
+umax <-  max(data) - 0.1   # threshold u max
+nint <- 100                # grid length to generate mean excess plot
+grid_0 <- numeric(nint)    # grid store
+e <- grid_0                # store mean exceedances e
+upper <- grid_0            # store upper confidence interval
+lower <- grid_0            # store lower confidence interval
+u <- seq(umin, umax, length = nint) # threshold u grid
+alpha <- 0.95                  # confidence level
+for (i in 1:nint) {
+    data <- data[data > u[i]]  # subset data above thresholds
+    e[i] <- mean(data - u[i])  # calculate mean excess of threshold
+    sdev <- sqrt(var(data))    # standard deviation
+    n <- length(data)          # sample size of subsetted data above thresholds
+    upper[i] <- e[i] + (qnorm((1 + alpha)/2) * sdev)/sqrt(n) # upper confidence interval
+    lower[i] <- e[i] - (qnorm((1 + alpha)/2) * sdev)/sqrt(n) # lower confidence interval
+  }
+mep_df <- data.frame(threshold = u, threshold_exceedances = e, lower = lower, upper = upper)
+```
+
+
+```{r loss-mep}
+# Voila the plot => you may need to tweak these limits!
+p <- ggplot(mep_df, aes( x= threshold, y = threshold_exceedances)) + geom_line() + geom_line(aes(x = threshold, y = lower), colour = "red") + geom_line(aes(x = threshold,  y = upper), colour = "red") + annotate("text", x = mean(mep_df$threshold), y = max(mep_df$upper)+100, label = "upper 95%") + annotate("text", x = mean(mep_df$threshold), y = min(mep_df$lower) - 100, label = "lower 5%") + ggtitle("Mean Excess Plot: maximum Sharpe Ratio portfolio") + ylab("threshold exceedances")
+ggplotly(p)
+```
+
+
+### Risky capital
+
+```{r loss-capital}
+n_sim <- 1000
+n_sample <- 100
+prob <- 0.95
+ES_sim <- replicate(n_sim, ES_calc(sample(loss_rf, n_sample, replace = TRUE), prob))
+#
+sim <- ES_sim
+low <- quantile(sim, 0.025)
+high <- quantile(sim, 0.975)
+sim_df <- data_frame(sim = sim)
+title <- paste0("Loss Capital Simulation: alpha =  ", alpha*100, "% bounds")
+p <- ggplot(data = sim_df, aes(x = sim))
+p <- p + geom_histogram(alpha = 0.4)
+p <- p + ggtitle(title)
+p <- p + geom_vline(xintercept = low, color = "red", size = 1.5 ) + geom_vline(xintercept = high, color = "red", size = 1.5)
+p <- p + annotate("text", x = low, y = 100, label = paste("L = ", round(low, 2))) + annotate("text", x = high, y = 100, label = paste("U = ", round(high, 2))) + ylab("density") + xlab("expected shortfall") + theme_bw()
+ggplotly(p)
+```
+
+### Collateral
+
+```{r collateral}
+options(digits = 2, scipen = 99999)
+#
+r_f <- 0.03 # per annum
+mu <- mu_P[ind_max] * 252 # pull mu and sigma for tangency portfolio
+sigma <- sigma_P[ind_max] * sqrt(252)
+#
+sigma_p <- seq(0, sigma + 0.25, length.out = 100)
+mu_p <- r_f + (mu - r_f)*sigma_p/sigma
+w <- sigma_p / sigma
+threshold <- -0.12
+alpha <- 0.05
+z_star <-  qnorm(alpha)
+w_star <- (threshold-r_f) / (mu - r_f + sigma*z_star)
+sim_df <- data_frame(sigma_p = sigma_p, mu_p = mu_p, w = w)
+#
+label_42 <- paste(alpha*100, "% alpha, ", threshold*100, "% threshold, \n", round(w_star*100, 2), "% risky asset", sep = "")
+label_0 <- paste(0*100, "% risky asset", sep = "")
+label_100 <- paste(1.00*100, "% risky asset", sep = "")
+p <- ggplot(sim_df, aes(x = sigma_p, y = mu_p)) + 
+  geom_line(color = "blue", size = 1.1) +
+  geom_point(aes(x = 0.0 * sigma, y = r_f + (mu-r_f)*0.0), color = "red", size = 3.0) + 
+  annotate("text", x = 0.2 * sigma, y = r_f + (mu-r_f)*0.0 + 0.01, label = label_0) +
+  geom_point(aes(x = w_star * sigma, y = r_f + (mu-r_f)*w_star), shape = 21, color = "red", fill = "white", size = 4, stroke = 4) + 
+  annotate("text", x = w_star * sigma + .2, y = r_f + (mu-r_f)*w_star + 0.1, label = label_42) +
+  geom_point(aes(x = 1.0 * sigma, y = r_f + (mu-r_f)*1.00), color = "red", size = 3.0) + 
+  annotate("text", x = 1.0 * sigma, y = r_f + (mu-r_f)*1.00 + 0.01, label = label_100) +
+  xlab("standard deviation of portfolio return") +
+  ylab("mean of portfolio return") +
+  ggtitle("Risk-return tradeoff of cash and risky asset")
+ggplotly(p)
+```
+
+
+Summary
+============================================
+
+column {.sidebar}
+--------------------------------------------
+
+### Overall
+
+Notes
+
+column {.tabset}
+--------------------------------------------
+
+### Ali Ho: DIS
+
+**Background**
+
+Disney has been a constant innovator and has continuously evolved its role in the movie industry. Disney originally started by creating and producing short cartoons, however quickly realized that merchandise and animated feature films would produce higher profits. Unfortunately, World War II almost put an end to Disney. Disney continued to rebrand and evolve. During the war, they made propaganda videos and afterwards moved into the live-action production and television show arenas, as well as their animated films. After reinvigorating the brand, the ever-innovating company branched out to amusement parks, bycreating Disneyland. Disney yet again had to reinvent itself in the 1980s, when their staple, family features, were no longer in demand.  As a response, Disney created a new label and produced films geared to an older audience. The ever-innovating Disney entered the world of cable tv, by creating their own network and producing tv shows for other networks as well. During this time, Disney also began releasing movies on video, which further popularized the brand. Disney became a top market competitorin the late 1980s. The 1990s were an exciting time for Disney. Not one to rest on their laurels, Disney entered the publishing market and created stage productions of select movies for Broadway. Disney also branch out to sports franchises by acquiring  hockey and baseball teams. Disney purchased ABC in 1996 and in 1998 expanded with ESPN Zone and their first cruise ship. When DVDs hit the market, Disney yet again quickly adapted and started to release DVDs that included bonus material. The 2000s proved no different, and Disney continued to make moves to grow. Disney acquired Pixar in 2006 , Marvel in 2009, and Lucasfilm Ltd in 2012. Disney did sell Miramax in 2010. The ever-evolving Disney is now contemplating entering the streaming market.  From: https://d23.com/disney-history/
+
+
+**Daily Performance** 
+
+The historical daily returns of Disney shows volatility and clustering, throughout the majority of the graph. However, there seems to be less volatility and clustering from days 800 - 1250, 1300 - 1500 and 1850 - 2100. 
+
+The autorcorrelation of daily returns shows that the returns are persistent. Today is affected by 5, 25, 26, 28, and 32 days ago. 
+
+The correlation of returns is slightly negative, due to their being slightly more negative correlations than positive correlations. There is only one positive correlation, day 26, that is persistent. The other 4 persistent correlations are negative. 
+
+The return_plot has a kurtosis value of 6.368. A kurtosis over three is deemed a high kurtosis, and this is double that. Having a high kurtosis indicates that the data has outliers and thick tails. The graph also has a very slight, almost negligible, positive skew with a skewness value of .118. . Financial models that are based on a normal distribution will not be accurate for this stock. Because Disney is postively skewed and has a high kurtosis, it might be a risk worth taking. 
+
+**Monthly Performance** 
+
+Disney's monthly volatility shows that it is slightly volatile. The reason, I say slightly, is because the difference in monthly returns is minimal. It vacillates between 0 and 0.038, but it does show volatility within that range. The daily volatility has a larger range and therefore, is more volatile. Even if you took the size of the returns (absolute value) the daily returns range would be 0 - 0.12, which is almost three times the range of the monthly volatility returns range. 
+
+The monthly autocorrelations tell a slightly different story than the daily autocorrelation. The most recent months matter the most to the current month and are persistent. The previous 44 months are persisten and correlated to the current month. The months gradually decrease in correlation strength as they get further away from the current month. The months that are persistent in order of correlation strength are months 1, 2, 3, 4, and 6. 
+
+**Expected Shortfall** 
+
+The expected shortfall measures the riskiness of an investment. The expected shortfall for Disney has an extremely large threshold, with a lower limit of 2,971,901.56 and an upper limit of 9,727,152.47. The upper limit is over three times greater than the lower limit. As a result, for Disney to lose money there would have to be a significant event in the market. 
+
+**Comparison**
+
+**DIS-NFLX**
+
+On the returns tab, DIS and NFLX have a moderate positive correlation, with a correlation coefficient of 0.22. 
+
+The correlation of the volatility between DIS and NFLX is extremely volatile with both highs and lows. The negative returns do go below 0, which can have a sizeable impact on future returns. The ACF shows that there is not as much persistence between the the stocks. Only lag 1 and lag 16 are persistent. The r_corr graph has a negative skew (skewed to the left) with a skewness of -0.97. The kurtosis is .8274, which shows that distribution does not have thick tails and is not heavily weighted with outliers. 
+
+**DIS-CMCSA** 
+
+On the returns tab, DIS and CMCSA have a strong positive correlation, with a correlation coefficient of 0.62. 
+
+The correlation of the volatility between DIS and CMCSA is also volatile with lower lows than highs. The negative returns do go below 0, which can have a sizeable impact on future returns. The ACF mimics the pattern of the ACF of DIS and NFLX, however only lag 3 (three months prior) is shown to be persistent. The r_corr graph also have a negative skew, -0.9, but has a slightly higher kurtosis at 2.39. The negative skew is caused by the data points that dropped below 0 in the monthly correlation graph. As they were a drastic change from the other data points. 
+
+**DIS-DISH** 
+
+On the returns tab, DIS and DISH have a strong positive correlation, albiet slightly weaker than the correlation between DIS and CMCSA, with a correlation coefficient of 0.51. 
+
+The correlation of the volatility between DIS and DISH is volatile, as well. However, there does not seem to be as big of a disparity between the high correlations and the negative correlations. They seem to happen rather equally. This is the reason why this relationship has the least amount of skewness. The skewness is -0.18 and kurtosis of -0.45. 
+
+**Take Away** 
+
+The volatility in the stocks seems to be strongly correlated. As a result, the stocks can influence one another in the market. Therefore, it makes sense to have a diversified portfolio in order to maximize the return. It is like the old saying goes, do not put all of your eggs in one basket. 
+
+### Krystalyn Carmelo: NFLX
+
+**Background**
+
+Netflix is not just a streaming service, it is a brand.  The Netflix brand itself holds value due to its historical performance and credibility.  They first appeared in the market through their DVD-by-mail service.  DVDs were around long before Netflix, this new service created a new market that disrupted the DVD rental service that ultimately lead to the bankruptcy of Blockbuster and Hollywood videos.  Netflix continued to grow by leaving their first profitable idea behind and began their internet streaming service of movies and shows.  This is the Netflix we know of today.  Their most recent innovation has been Netflix movies which they call Netflix Originals. These are explicit series or movies that can only be seen on their service. This add-on has been well received due to the quality of the production and dialogue of each Netflix Original.  
+
+As a potential investor, we must assess how Netflix compares to Comcast and AT&T through historical performance in their stock returns and volatility. Disney, who is set to launch a streaming service by the end of 2019 will try to capture some market share from Netflix and other competitors.
+
+**Daily Performance**
+
+Volatility - the historical daily returns of Netflix does not show high volatility, it hovers +/- 0.1 and depicts very minimal outliers, rarely crossing +/- 0.2.
+
+
+The autocorrelation (ACF) show a good correlation between the return and the time series. As shown below, the quantity of positive correlation in comparison to negative is greater and at times surpasses .025 more than once. The return plot of Netflix also shows very little volatility with a thin bell curve of returns. It’s also not skewed left or right which can be seen as a safe investment. This can determine the holdings of an investment. They have shown historically can they perform and deliver in new markets.
+
+
+**Monthly Performance**
+
+The monthly volatility relative to the daily is very similar in terms of trend. Where they differ can be seen on the bell curve below. The bell curve for the monthly return, though positive is skewed slightly left with a small kurtosis tail. Skewed right shows somewhat of a negative return and the kurtosis shows highlights the risk of outliers.
+
+
+The expected shortfall measure this risk of an investment. The ES is netflix has a large threshold, L = 800,894.4 and U = 191,2769.03. The upper is twice as large as the lower level. With this large of a threshold, there would have to be a significant impact in the market for netflix to lose money. This holds true based on the historical data of its returns.
+
+
+**Comparison - NFLX/CMCSA and NFLX/DIS**
+
+Netflix compared to Comcast shows they are highly correlated with large volatility of highs and lows. The autocorrelation also shows greater negative returns instead of positive returns. Based on the volatility results, I wouldn’t diversify my portfolio to include Comcast as I would increase the risk.
+
+The market spillover, between Netflix and Comcast show large spillover. This can indicate that the events of the economy can cause a large ripple effect with these two stocks. This is another reason not to have both stocks in your portfolio. 
+
+Netflix compared to Disney show they are highly correlated with large volatility of highs and lows. Although the negative returns do exceed zero which can have a significant impact on future returns. The autocorrelation also moves from positively correlated to negative as more lags are added. The bell curve is skewed right with a sizable kurtosis. Based on the results, Netflix and Disney would return negative results. Although, this could change when Disney moves into the streaming market but could have similar results to Comcast.
+
+Netflix compared to Comcast and Disney yields a higher return and overall higher sharpe ratio of Netflix 46.14% to Comcast -16.99% and Disney 36.17%. The results show that these stocks are highly correlated and can impact each other in the market. It would be best to only have one streaming stock in your portfolio. This is a perfect example of diversifying your portfolio inorder to maximize return, increase in cash and EBIT.
+
+
+### Kendra: CMCSA
+
+**Background** 
+
+Comcast is a multi-billion dollar telecommunications conglomerate. Worldwide, it is the second largest broadcasting and cable television company. Domestically, it's the largest internet service provider, third-largest home telephone service provider and also a producer of feature films and TV programs through its subsidiary NBCUniversal. 
+
+Comcast subsidiaries include residential cable companies (Xfinity), film and TV production studios and theatrical distributors (NBC Universal), professional sports teams and venture capital firms.  
+
+Our shareholders wish to assess how streaming companies like Netflix and newly Disney will impact the performance of our subsidiaries and overall holdings. 
+
+**Performance** 
+
+The daily change in the CMCSA closing stock price (top graph in CMCSA tab of the Returns page) appears to have no trend, seasonality or cyclic behavior. The data shows random fluctuations which do not appear to be very predictable, and no strong patterns that would help with developing a forecasting model.
+
+Just as correlation measures the extent of a linear relationship between two variables, autocorrelation measures the linear relationship between lagged values of a time series. As seen on the returns tab, CMCSA returns are more negatively persistent than positively persistent, however, at lag 12, there is a very strong positive correlation that can't be ignored and should be investigated further.
+
+**Comparison** 
+
+From the graphs on first tab of the Returns page, it's clear that CMCSA returns aren't strongly correlated with NFLX returns (19% correlation). However, CMCSA returns are strongly correlated with Dish returns (51%) and very strongly correlated with Disney returns (62%). 
+
+As Comcast is a large conglomerate with an incredibly diverse portfolio, it is challenging to compare Comcast to Disney, Dish and Netflix outright. Comcast has subsidiaries that are better comparisons (for example, Universal to Disney) but since Universal doesn't have its own stock ticker (none of the subsidiaries do, which is good for the parent company – diverse portfolio!—bad for the analysts – what's causing the correlations?) it's hard to know what exactly is contributing to these relationships. 
+
+Additionally, Netflix and Comcast have their own agreement where Comcast (through Xfinity) provides faster internet streaming for Netflix, so they are entangled but not necessarily related. https://www.latimes.com/entertainment/envelope/cotown/la-fi-ct-netflix-comcast-20140224-story.html
+
+Furthermore, it's challenging to compare Comcast to Netflix as a streaming service because Comcast doesn't have a streaming service of its own and Netflix only recently became a producer of its own content. Comcast's role in the streaming world will continue to be a potential gate-keeping factor for companies like Netflix who rely on the services of Comcast/Xfinity in order to fulfill their own product/promise to customers. 
+
+Lastly, comparing Comcast to Dish (a strong correlation but not the strongest) makes the most sense historically, but not currently. To get a better understanding of the relationship, breaking up the data by epics in time would be beneficial. 
+
+In summation, if we're a company looking to invest and we're doing so on the basis of metrics like skewness and kurtosis, CMCSA out of all of the other stocks in our current overview, has the highest kurtosis meaning it is by far the riskiest asset to invest in (with NFLX as a very close second). This means highest chance at profit, but also the highest chance of loss, which is exactly why we look to create varied and diverse portfolios, just like Comcast the conglomerate has done internally. 
+
+**Future Study** 
+
+Continuing to use the past as evidence, it would be interesting to investigate the correlations of these companies during particularly news-worthy moments in time – can we see the writing on the wall that lead Disney to launch their own streaming service? Can we identify when Comcast might have tried to buy Fox? Can we use these tools to see if we would have arrived at the same decisions the chief executives eventually arrived at? How does this all feed into the greater story of the future of the entertainment industry?
+
+
+
+### Jiang: DISH
+
+- DISH
+
+References
+============================================
