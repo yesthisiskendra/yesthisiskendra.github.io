@@ -1,0 +1,500 @@
+   13  vue init webpack-simple my-project
+   14  cd my-project/
+   15  pwd
+   16  npm install
+   17  npm install
+   18  npm run dev
+   19  pip install django-webpack-loader
+   20  pwd
+   21  npm install --save-dev webpack-bundle-tracker
+   22  pwd
+   23  npm run dev
+   24  npm install write-file-webpack-plugin --save-dev
+   25  npm run dev
+   26  pwd
+   27  npm run dev
+   28  npm run dev
+   29  npm run dev
+   30  npm run dev
+   31  npm run dev
+   32  npm run dev
+   33  npm run dev
+   34  npm run build
+   35  npm run dev
+   36  npm run dev
+   37  npm run build
+   38  npm run dev
+   39  eb create django-env-frontend
+   40  pwdd
+   41  pwd
+   42  history
+   43  echo history -> history_ebvirt2.txt
+   44  ls
+   45  pwd
+   46  /Users/kendraosburn/.anaconda/navigator/a.tool ; exit;
+   47  virtualenv ~/eb-virt3
+   48  ~/eb-virt3/bin/activate
+   49  source ~/eb-virt3/bin/activate
+   50  pip install django==2.1.5
+   51  django-admin startproject ebdjango3
+   52  pip freeze > requirements.txt
+   53  mkdir .ebextensions
+   54  cd .ebextensions
+   55  vi django.config
+   56  subl .
+   57  cd ..
+   58  pwd
+   59  pwd
+   60  echo history -> history_ebvirt3.txt
+   61  pwd
+   62  ls
+   63  /Users/kendraosburn/.anaconda/navigator/a.tool ; exit;
+   64  virtualenv ~/eb-virt4
+   65  source ~/eb-virt4/bin/activate
+   66  pip install django==2.1.5
+   67  django-admin startproject ebdjango4
+   68  pip freeze > requirements.txt
+   69  pip freeze
+   70  django-admin startproject ebdjango4
+   71  cd ebdjango4
+   72  pwd
+   73  python manage.py runserver
+   74  pwd
+   75  pip freeze > requirements.txt
+   76  pwd
+   77  mkdir .ebextensions
+   78  cd .ebextensions
+   79  vi django.config
+   80  pwd
+   81  cd ..
+   82  pwd
+   83  eb init -p python-3.6 django-tutorial4
+   84  eb init
+   85  eb create django-env4
+   86  eb status
+   87  subl .
+   88  eb deploy
+   89  git status
+   90  git init
+   91  git config credential.username "yesthisiskendra"
+   92  git checkout master
+   93  git add .
+   94  git commit -m "First commit woot woot"
+   95  git remote add origin https://github.com/yesthisiskendra/wakemeupbeforeyoudjango.git
+   96  git push -u origin master
+   97  history
+   98  git checkout master
+   99  eb use prod
+  100  eb open
+  101  eb use dev
+  102  eb open dev
+  103  eb open default
+  104  eb use dev
+  105  eb deploy --staged
+  106  eb deploy
+  107  eb list
+  108  eb use django-env4
+  109  eb deploy
+  110  echo history > django_0603_eb4
+  111  /Users/kendraosburn/.anaconda/navigator/a.tool ; exit;
+  112  cd getthegist/
+  113  ls
+  114  git status
+  115  git add
+  116  git add .
+  117  git commit -m "Tidying"
+  118  git checkout recurve2
+  119  git checkout recurve1
+  120  git checkout recurve
+  121  python COOKBOOK_sentiment_analysis_clean.py 
+  122  python COOKBOOK_sentiment_analysis_clean.py 
+  123  python COOKBOOK_sentiment_analysis_clean.py 
+  124  python COOKBOOK_sentiment_analysis_clean.py 
+  125  python COOKBOOK_sentiment_analysis_clean.py 
+  126  python COOKBOOK_sentiment_analysis_clean.py 
+  127  python COOKBOOK_sentiment_analysis_clean.py 
+  128  python COOKBOOK_sentiment_analysis_clean.py 
+  129  python COOKBOOK_sentiment_analysis_clean.py 
+  130  python COOKBOOK_sentiment_analysis_clean.py 
+  131  python COOKBOOK_sentiment_analysis_clean.py 
+  132  python COOKBOOK_sentiment_analysis_clean.py 
+  133  python COOKBOOK_sentiment_analysis_clean.py 
+  134  python COOKBOOK_sentiment_analysis_clean.py 
+  135  python COOKBOOK_sentiment_analysis_clean.py 
+  136  python COOKBOOK_sentiment_analysis_kaggle.py 
+  137  python COOKBOOK_sentiment_analysis_kaggle.py 
+  138  python COOKBOOK_sentiment_analysis_kaggle.py 
+  139  python
+  140  for filename in /FinalProjectAli/*.py; do echo filename; done
+  141  for filename in /FinalProjectAli/*.py; do echo $filename; done
+  142  for filename in FinalProjectAli/*.py; do echo $filename; done
+  143  for filename in FinalProjectAli/*.py; do python $filename corpus 20; done
+  144  for filename in FinalProjectAli/*.py; do python $filename corpus 20; done
+  145  exit() exit
+  146  exit
+  147  for filename in FinalProjectAli/*.py; do python $filename corpus 20; done
+  148  for filename in .*.py; do python $filename corpus 20; done
+  149  exit
+  150  for filename in FinalProjectAli/*.py; do python $filename FinalProjectAli/corpus 20; done
+  151  for filename in FinalProjectAli/*.py; do python $filename FinalProjectAli/corpus 20; done
+  152  exit
+  153  python classifyKaggle.crossval_2_bigrams.py corpus 1000
+  154  python classifyKaggle.crossval_2_bigrams.py corpus 1000
+  155  python classifyKaggle.crossval_2_bigrams.py corpus 1000
+  156  python test.py
+  157  python test.py
+  158  python classifyKaggle.crossval_2_bigrams.py corpus 1000
+  159  python classifyKaggle.crossval_2_bigrams.py corpus 1000
+  160  pwd
+  161  ls
+  162  pwd
+  163  python subjectivity.py 
+  164  python classifyKaggle.crossval_2_bigrams_OG.py corpus 1000
+  165  python classifyKaggle.crossval.sentiment.py corpus 1000
+  166  python classifyKaggle.crossval.sentiment.py corpus 1000
+  167  python classifyKaggle.crossval.sentiment.py corpus 1000
+  168  python classifyKaggle.crossval.sentiment.py corpus 10000
+  169  python classifyKaggle.crossval.sentiment.py corpus 10000
+  170  python classifyKaggle.crossval.sentiment.py corpus 10000
+  171  python classifyKaggle.crossval.sentiment.py corpus 10000
+  172  python classifyKaggle.crossval.sentiment.py corpus 10000
+  173  python classifyKaggle.crossval.sentime.py corpus 10000
+  174  python classifyKaggle.crossval.sentiment.py corpus 10000
+  175  history > history_0614h.txt
+  176  cd syracuse/FinalProjectZip/
+  177  subl
+  178  subl .
+  179  font='/Library/Application Support/Adobe/PDFL/10.9/Fonts/AdobePiStd.otf'
+  180  cp $font /Library/Fonts/
+  181  find / -name AdobePiStd.otf 2>/dev/null
+  182  pwd
+  183  cd ..
+  184  cd ..
+  185  FinalProjectAli/
+  186  cd FinalProject
+  187  cd FinalProjectAli/
+  188  cd classifyFiles/
+  189  python classifyKaggle.crossval_final_combined.py corpus 10000
+  190  python classifyKaggle.crossval_final_combined.py corpus 10000
+  191  python classifyKaggle.crossval_final_combined.py corpus 10000
+  192  python classifyKaggle.crossval_final_combined.py corpus 10000
+  193  pwd
+  194  python classifyKaggle.crossval_final_combined.py corpus 10000
+  195  python classifyKaggle.crossval_final_combined.py corpus 10000
+  196  subl .
+  197  git status
+  198  echo "# wereacttoweather" >> README.md
+  199  git init
+  200  git status
+  201  git add .
+  202  git status
+  203  git commit -m "Improved the original create react app landing page by adding a cat"
+  204  git config credential.username "yesthisiskendra"
+  205  git remote add origin https://github.com/yesthisiskendra/wereacttoweather.git statu
+  206  git push -u origin master
+  207  git status
+  208  git add .
+  209  git commit -m "Add materialize css so the fonts don't give us a headache"
+  210  git push -u origin master
+  211  git status
+  212  git add .
+  213  git commit -m "Removing CatLanding and actually building the skeleton of our app"
+  214  git push -u origin master
+  215  git status
+  216  git add .
+  217  git commit -m "Checking to see if we have a zip code"
+  218  git push -u origin master
+  219  npm install react-materialize --save
+  220  npm run build
+  221  yarn add react
+  222  npm run build
+  223  git status
+  224  npm uninstall react-materialize --save
+  225  git status
+  226  git diff
+  227  git status
+  228  ls
+  229  mkdir experiments
+  230  open 
+  231  open finder
+  232  -R
+  233  open -R
+  234  git status
+  235  git add .
+  236  git commit -m "Zip code form working as expected"
+  237  npm run build && aws s3 sync build/ s3://wereacttotheweather
+  238  npm run build && aws s3 sync build/ s3://wereacttotheweather
+  239  git status
+  240  git add .
+  241  git commit -m "Removed unnecessary functions, confirmed ZipDisplay can receive props"
+  242  git status
+  243  git diff
+  244  npm install react-google-charts
+  245  git status
+  246  git log --oneline
+  247  git add .
+  248  git commit -m "Month chart and year chart both displaying, both stubbed"
+  249  git push -u origin master
+  250  npm run build && aws s3 sync build/ s3://wereacttotheweather
+  251  git status
+  252  git diff
+  253  git checkout -b style
+  254  npm install materialize-css@next
+  255  npm run build
+  256  git status
+  257  git status
+  258  git add .
+  259  git commit -m "Everything currently living in BarCart. #todo refactor into ZipDisplay"
+  260  git push -u origin master
+  261  git push origin master
+  262  git status
+  263  git checkout master
+  264  git merge style
+  265  git status
+  266  git push -u origin master
+  267  npm run build && aws s3 sync build/ s3://wereacttothe
+  268  git status
+  269  git status
+  270  git status
+  271  git add .
+  272  git commit -m "Cleaning, year dropdown is working"
+  273  git push -u origin master
+  274  npm run build && aws s3 sync build/ s3://wereacttotheweather
+  275  npm run build && aws s3 sync build/ s3://wereacttotheweather
+  276  npm i -g @vue/cli
+  277  sudo npm i -g @vue/cli
+  278  vue create recurve-vue
+  279  vue create vue-recurve
+  280  cd vue-recurve/
+  281  npm run serve
+  282  git status
+  283  git add .
+  284  git commit -m "Starting with Vue"
+  285  git status
+  286  npm run serve
+  287  npm run serve
+  288  npm run servejson-server --watch db.json
+  289  npm run serve
+  290  history
+  291  history > history_061919.txt
+  292  ls
+  293  open history_061919.txt 
+  294  cd Projects/acistv00/
+  295  subl .
+  296  http://localhost:8080/
+  297  cd gmail-api/
+  298  python -m http.server 8000
+  299  pwd
+  300  exit
+  301  git status
+  302  history > 062619.txt
+  303  subl .
+  304  json-server --watch db.json
+  305  json-server --watch db.json --port 4000
+  306  json-server --watch --port 4000 db.json
+  307  json-server --watch --port 5000 db.json
+  308  git config --global user.email yesthisiskendra@gmail.com
+  309  cd vue-zips/
+  310  git status
+  311  git add .
+  312  git commit -m "Git test"
+  313  git push -u origin master
+  314  git config --global user.name  yesthisiskendra
+  315  git config --global user.name yesthisiskendra
+  316  git commit --amend --reset-author
+  317  cd ..
+  318  ls
+  319  cd vue-two/
+  320  ls
+  321  git status
+  322  cd..
+  323  cd ..
+  324  cd vue-one
+  325  subl .
+  326  git status
+  327  mkdir .gitignore
+  328  mkdir experiments
+  329  touch .gitignore
+  330  git status
+  331  git add .
+  332  git commit -m "Add gitignore"
+  333  git push -u origin master
+  334  git log --oneline
+  335  git rebase -i dd4599e --exec 'git commit --amend --reset-author --no-edit'
+  336  git status
+  337  git push origin
+  338  git push origin -f
+  339  vue create vue-zips-2
+  340  cd vue-zips-2
+  341  npm run serve
+  342  npm run serve
+  343  history > history_071619a.txt
+  344  ls
+  345  npm install vuejs-datepicker --save
+  346  npm run serve
+  347  history > history_071619a.txt
+  348  git status
+  349  git init
+  350  git add .
+  351  git commit -m "Mutations pt1"
+  352  git status
+  353  git add .
+  354  git commit -m "Completed Vuex Mastery"
+  355  git checkout -b "063019_konmari"
+  356  git status
+  357  history > history_071619b.txt
+  358  json-server --watch db.json
+  359  history > history_071619c.txt
+  360  cd d3-book-2.0.3/
+  361  subl .
+  362  python -m SimpleHTTPServer 8888 &
+  363  python -m SimpleHTTPServer 8888 &
+  364  python3 -m http.server 9000
+  365  history > history_071619a.txt
+  366  pwd
+  367  vue ui
+  368  vue ui
+  369  git status
+  370  git add .
+  371  git commit -m "Added month and year chart components, stubbed"
+  372  npm i --save d3
+  373  npm i --save core-js@2.6.5
+  374  git status
+  375  git add /
+  376  git add .
+  377  git commit -m "Add sass, add first chart"
+  378  git status
+  379  git checkout -b 062519_areachart
+  380  git add .
+  381  git commit -m "Two additional test files"
+  382  git status
+  383  git checkout -b 0625_merge
+  384  git add .
+  385  git commit -m "Saved test files to branch"
+  386  git checkout master
+  387  git merge 0625_merge
+  388  git status
+  389  git add .
+  390  git commit -m "Add three chart components"
+  391  git status
+  392  git push -u origin master
+  393  git status
+  394  git checkout -b 062519_barchart
+  395  git add .
+  396  git commit -m "Add bar chart"
+  397  git status
+  398  git checkout -b 062719_vuex
+  399  git add .
+  400  git commit -m "Add vuex"
+  401  git status
+  402  git add .
+  403  git commit -m "HECK YES CHART DOING CHART"
+  404  git status
+  405  git add .
+  406  git commit -m "Quick clean"
+  407  git checkout -b 062719_merge
+  408  git status
+  409  git add .
+  410  git commit -m "Quick clean"
+  411  git checkout master
+  412  git merge 062719_merge
+  413  git status
+  414  git status
+  415  git diff
+  416  git add .
+  417  git commit -m "Fun addition to about page:
+  418  "
+  419  git status
+  420  git push
+  421  npm run build
+  422  aws s3 sync ./dist s3://vuefromhere
+  423  git status
+  424  git checkout -b 062719_multicharts
+  425  git add .
+  426  git commit -m "Three charts one page"
+  427  git status
+  428  git add .
+  429  git commit -m "Refactoring"
+  430  git status
+  431  git add .
+  432  git commit -m "Working with zipcode store variable"
+  433  git status
+  434  git add .
+  435  git commit -m "Working with multiple zipcodes"
+  436  git status
+  437  git add .
+  438  git commit -m "Local storage not working"
+  439  git checkout master
+  440  git status
+  441  git branch
+  442  git checkout 062719_merge
+  443  git checkout 062719_vuex
+  444  git checkout 062719_multicharts
+  445  git checkout master
+  446  git status
+  447  git add .
+  448  git commit -m "Quick refactor"
+  449  git push -u origin master
+  450  git status
+  451  git status
+  452  history > history_071619b2.txt
+  453  history
+  454  cd syracuse/IST_652/
+  455  ls
+  456  cd WK2/
+  457  ls
+  458  cd ..
+  459  cd WK2/
+  460  python IST_652_WK2_2-5.py 
+  461  python IST_652_WK2_2-5.py 
+  462  python IST_652_WK2_2-5.py 
+  463  python IST_652_WK2_2-5.py 
+  464  curl -X POST https://appt-tstx-fcistg.api.lumin.ai/lead/demo-sms -d '{"lead_email": "a@b.com", "token": "saoeutn23htnuo", "surname": "Kern", "given_name": "Avrana", "lead_phone": "11011011001"}'
+  465  npm run serve
+  466  ls
+  467  cd yesthisiskendra.github.io/
+  468  git status
+  469  subl .
+  470  touch .gitignore
+  471  mkdir ignore
+  472  cd datascience/
+  473  mkdir finance
+  474  cd finance/
+  475  git status
+  476  cd ..
+  477  cd ..
+  478  git status
+  479  git status
+  480  git add .
+  481  git commit -m "FIN_654_UNIT_3 Notes"
+  482  git push -u origin master
+  483  git status
+  484  ls
+  485  mkdir puzzles
+  486  cd puzzles/
+  487  python arrays_and_strings.py 
+  488  python arrays_and_strings.py 
+  489  python arrays_and_strings.py 
+  490  python arrays_and_strings.py 
+  491  python arrays_and_strings.py 
+  492  python arrays_and_strings.py 
+  493  git status
+  494  cd ..
+  495  git status
+  496  git add .
+  497  git commit -m "Fun puzzles" 
+  498  git push -u origin master
+  499  python
+  500  history > history_072419c.txt
+  501  cd yesthisiskendra.github.io/
+  502  git status
+  503  git add .
+  504  git commit -m "IST 652 Lab 2" 
+  505  git push -u origin master
+  506  git log --oneline
+  507  git status
+  508  git add .
+  509  git commit -m "Hourglass puzzle rewritten to be about spiders because I love spiders thanks to Children of Time"
+  510  git push -u origin master
+  511  k
+  512  history > history_072919.txt
