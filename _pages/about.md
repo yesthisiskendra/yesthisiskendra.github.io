@@ -3,7 +3,7 @@ layout: home
 title: "About"
 permalink: /about/
 header:
-  image: "/images/abbie_bernet_la.jpg"
+  image: "/assets/images/abbie_bernet_la_sm.jpg"
 ---
 
 Web Dev + Data Science
