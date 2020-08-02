@@ -6,4 +6,4 @@ header:
   image: "/assets/images/abbie_bernet_la_sm.jpg"
 ---
 
-Web Dev + Data Science
+Web Dev + Data Science + Cat 
