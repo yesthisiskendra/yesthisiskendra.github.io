@@ -21,5 +21,5 @@ Coming soon
 A (REJECTED!!) chrome extension that turns all images on a page to either cats or Bill Murray 
 [Michael Scott Kitten Company](http://michaelscottkittencompany.com/)
 
-
-
+[Bookclub Bot](https://yesthisiskendra.github.io/projects/bookclubbot)
+[Mass Emailer]((https://yesthisiskendra.github.io/projects/massemailer))
