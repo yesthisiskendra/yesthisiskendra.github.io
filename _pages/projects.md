@@ -27,3 +27,24 @@ A (REJECTED!!) chrome extension that turns all images on a page to either cats o
 
 [Silly Shopping Cart](https://umjs-ecomm-live.herokuapp.com/)
 [Silly Shopping Cart -- FOR CATS! (in progress)](https://catcartcheckmeowt.herokuapp.com/)
+
+Movie Fights (umjs-movie-fights)
+
+## CURRENT LEARNING PROJECTS:
+
+EDXStats
+UJS
+UWD
+LHTL 
+UMJS
+
+## PREVIOUS LEARNING PROJECTS:
+
+UMRE
+
+## PAUSED LEARNING PROJECTS:
+
+UPY
+UPYDash
+
+
