@@ -23,7 +23,7 @@ A (REJECTED!!) chrome extension that turns all images on a page to either cats o
 [Michael Scott Kitten Company](http://michaelscottkittencompany.com/)
 
 [Bookclub Bot](https://yesthisiskendra.github.io/projects/bookclubbot)
-[Mass Emailer](<(https://yesthisiskendra.github.io/projects/massemailer)>)
+[Mass Emailer](https://yesthisiskendra.github.io/projects/massemailer)
 
 [Silly Shopping Cart](https://umjs-ecomm-live.herokuapp.com/)
 [Silly Shopping Cart -- FOR CATS! (in progress)](https://catcartcheckmeowt.herokuapp.com/)

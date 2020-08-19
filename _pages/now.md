@@ -4,8 +4,7 @@ title: "Now"
 permalink: /now/
 ---
 
-
-# Currently I'm:
+# Currently I'm (8/17):
 
 ## Reading:
 
@@ -15,13 +14,12 @@ permalink: /now/
 
 ## Eating:
 
-- Leftover Fajitas 
-- Husband's Homebrew: Sweet Thai Delight 
+- Leftover Fajitas
+- Husband's Homebrew: Sweet Thai Delight
 
 ## Listening To:
 
 - Old Taylor Swift (Reputation is excellent for AM biking)
-
 
 ---
 
