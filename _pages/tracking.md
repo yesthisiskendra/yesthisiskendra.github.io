@@ -4,6 +4,58 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 8-22-20
+
+SATURDAY!!
+
+UMJS: 
+
+VG: Data checking
+
+## 8-21-20
+
+ISL: Nope
+
+UJS: (Mock Interview) with Graphs!
+
+UWD: Nope
+
+LHTL: Nope
+
+-- 
+
+UMJS: Nope
+
+--
+
+VG: P6 Salary Adjustments 
+
+CM: Nope
+
+OTHER?
+
+## 8-20-20
+
+VG: P5 Compensation and Gender
+
+CM: Nope
+
+## 8-19-20
+
+ISL: Ch7 -- Continued with R!
+
+UJS: MOAR GRAPH TRAVERSAL
+
+UWD: Api party -- now weather API works!!
+
+LHTL: Practice chunking quiz!
+
+---
+
+CM: Started working on `waait` ended up working on buttons to mimic the ClosetMate app
+
+VG: Working on Compensation and Gender
+
 ## 8-18-20
 
 --
