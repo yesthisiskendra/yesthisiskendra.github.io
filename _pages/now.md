@@ -4,6 +4,21 @@ title: "Now"
 permalink: /now/
 ---
 
+# Currently I'm (8/24):
+
+## Reading:
+
+Automate the Boring Stuff
+Cracking the Coding Interview
+
+## Eating:
+
+Amazing tacos from the local place up the street
+
+## Listening to:
+
+The Eurovision Soundtrack, specifically Husavik (My Hometown)
+
 # Currently I'm (8/17):
 
 ## Reading:
