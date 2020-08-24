@@ -15,27 +15,35 @@ Coming soon
 ### THINGS I'VE MADE FOR ONE REASON OR ANOTHER:
 
 [WikiSummarizer](http://wikisummarizer.herokuapp.com/)
+
 [MoovieRanker](https://aaroncaraway.github.io/moovieranker/)
+
+[Movie Faceoff (8/20)](http://www.moviefaceoff.com/)
+
 [Chrome Extension: Proust Prompts](https://chrome.google.com/webstore/detail/proust-prompts/egkfjfopadpmhjcmephkepgpplpbofpc?hl=en)
+
 [Chrome Extension: Tabs to Markdown](https://chrome.google.com/webstore/detail/tabs-as-markdown/ajipphpanoaggohadhcfidefedclmhnn?hl=en)
+
 A (REJECTED!!) chrome extension that turns all images on a page to either cats or Bill Murray
+
 [Succulent Support Club](http://yesthisiskendra.com/work/succulentsupportclub/index.html)
+
 [Michael Scott Kitten Company](http://michaelscottkittencompany.com/)
 
 [Bookclub Bot](https://yesthisiskendra.github.io/projects/bookclubbot)
+
 [Mass Emailer](https://yesthisiskendra.github.io/projects/massemailer)
 
 [Silly Shopping Cart](https://umjs-ecomm-live.herokuapp.com/)
-[Silly Shopping Cart -- FOR CATS! (in progress)](https://catcartcheckmeowt.herokuapp.com/)
 
-Movie Fights (umjs-movie-fights)
+[Silly Shopping Cart -- FOR CATS! (in progress)](https://catcartcheckmeowt.herokuapp.com/)
 
 ## CURRENT LEARNING PROJECTS:
 
 EDXStats
 UJS
 UWD
-LHTL 
+LHTL
 UMJS
 
 ## PREVIOUS LEARNING PROJECTS:
@@ -46,5 +54,3 @@ UMRE
 
 UPY
 UPYDash
-
-

@@ -1,10 +1,11 @@
 ---
 layout: home
-title: "ATBS: Emails"
+title: "ATBS: Texting"
 permalink: /bookclubbot
 ---
 
 # HOW TO:
+
 (Inspired by ATBS Ch. 16)
 
 1. Use python script to text the people
@@ -43,6 +44,3 @@ NOTE: Endpoint is the tinest express app on heroku.
 
 [Puma Pants Texting](https://pumapantstexting.herokuapp.com/)
 ^ Literally nothing there because we only care about the endpoint which sends a response back to the text
-
-
-
