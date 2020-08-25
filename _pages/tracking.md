@@ -6,9 +6,29 @@ permalink: /tracking/
 
 ## 8-22-20
 
+MONDAY!!
+
+ISL: ANOVAS
+
+UJS: Depth first search, iterative
+
+UWD: API review -- smallest API app using https
+
+LHTL: Interview with Scott Young, importance of (1) "teaching" what you're learning to others on a black piece of paper (2) Getting to where you are uncomfortable as quickly as possible
+
+---
+
+UMJS: [Movie Faceoff (8/20)](http://www.moviefaceoff.com/)
+
+VG: Nope
+
+CM: Nope
+
+## 8-22-20
+
 SATURDAY!!
 
-UMJS: 
+UMJS:
 
 VG: Data checking
 
@@ -22,13 +42,13 @@ UWD: Nope
 
 LHTL: Nope
 
--- 
+--
 
 UMJS: Nope
 
 --
 
-VG: P6 Salary Adjustments 
+VG: P6 Salary Adjustments
 
 CM: Nope
 
