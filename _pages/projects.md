@@ -38,6 +38,8 @@ A (REJECTED!!) chrome extension that turns all images on a page to either cats o
 
 [Silly Shopping Cart -- FOR CATS! (in progress)](https://catcartcheckmeowt.herokuapp.com/)
 
+[Dice Decider](https://aaroncaraway.github.io/dicedecider/)
+
 ## CURRENT LEARNING PROJECTS:
 
 EDXStats

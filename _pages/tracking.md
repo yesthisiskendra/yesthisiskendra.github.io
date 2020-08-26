@@ -12,7 +12,7 @@ ISL: ANOVAS
 
 UJS: Depth first search, iterative
 
-UWD: API review -- smallest API app using https
+UWD: API review -- smallest API app using https (uwd-weather)
 
 LHTL: Interview with Scott Young, importance of (1) "teaching" what you're learning to others on a black piece of paper (2) Getting to where you are uncomfortable as quickly as possible
 
@@ -20,7 +20,7 @@ LHTL: Interview with Scott Young, importance of (1) "teaching" what you're learn
 
 UMJS: [Movie Faceoff (8/20)](http://www.moviefaceoff.com/)
 
-VG: Nope
+VG: Reached out to old profs, mentors re: writing job description
 
 CM: Nope
 
