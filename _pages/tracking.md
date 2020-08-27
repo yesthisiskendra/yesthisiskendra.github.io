@@ -4,6 +4,26 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 8-27-20
+
+THURSDAY!!
+
+ISL: Splines
+
+UJS: Graph -- DFS, recursively
+
+UWD: uwd-dicee
+
+LHTL:
+
+---
+
+UMJS: umjs-timer
+
+CM:
+
+VG:
+
 ## 8-22-20
 
 MONDAY!!
