@@ -4,6 +4,30 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 8-29-20
+
+SATURDAY!!
+
+ISL: GAM = Generalized Additive Models (and using the `gam` plotting functionality on lm and glm)
+
+UJS: BFS -- without looking at his code or even pseudocode
+
+UWD: uwd-weather -- Post requests to the weather api
+
+LHTL: Memory -- how to use our spacial memory to our advantage
+
+---
+
+UMJS: umjs-timer -- live
+
+VG: mtg with Fox
+
+CM: nope
+
+---
+
+EHD: Photos from KDR_2T_OldNM to KDR_2020_A
+
 ## 8-28-20
 
 FRIDAY!!

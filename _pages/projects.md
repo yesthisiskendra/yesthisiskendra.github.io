@@ -40,6 +40,8 @@ A (REJECTED!!) chrome extension that turns all images on a page to either cats o
 
 [Dice Decider (8/20)](https://aaroncaraway.github.io/dicedecider/)
 
+[Countdown timer (8/29/20)](https://umjs-timer.vercel.app/)
+
 ## CURRENT LEARNING PROJECTS:
 
 EDXStats
@@ -47,6 +49,12 @@ UJS
 UWD
 LHTL
 UMJS
+
+## UPCOMING LEARNING PROJECTS:
+
+UMS
+URN
+UTY
 
 ## PREVIOUS LEARNING PROJECTS:
 
@@ -56,3 +64,4 @@ UMRE
 
 UPY
 UPYDash
+UPiano

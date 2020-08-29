@@ -4,6 +4,20 @@ title: "Now"
 permalink: /now/
 ---
 
+# Currently I'm (8/29):
+
+## Reading:
+
+Wise Man's Fear (!!!)
+
+## Eating:
+
+Carrot fries???
+
+## Listening to:
+
+Harry Styles
+
 # Currently I'm (8/24):
 
 ## Reading:
