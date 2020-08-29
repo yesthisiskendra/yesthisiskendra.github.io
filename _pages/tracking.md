@@ -4,13 +4,33 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 8-28-20
+
+FRIDAY!!
+
+ISL: gams
+
+UJS: rewriting yesterday's Mock
+
+UWD: Continuing with Weather App & API
+
+LHTL: Procrastination quiz & notes
+
+---
+
+UMJS: timer
+
+VG: Nope
+
+CM: Nope
+
 ## 8-27-20
 
 THURSDAY!!
 
 ISL: Splines
 
-UJS: Graph -- DFS, recursively
+UJS: MOCK! Graph -- DFS, recursively
 
 UWD: uwd-dicee
 
