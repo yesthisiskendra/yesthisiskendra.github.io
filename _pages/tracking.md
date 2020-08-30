@@ -4,6 +4,32 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 8-30-20
+
+SUNDAY!!
+
+ISL:
+
+UJS: BFS again -- removed an unnecessary if statement
+
+UWD: finished uwd-weather, started uwd-mailchimp
+
+LHTL: Memory pt2 -- learned about the ASTROCYTES and how Einstein had many more than the average human
+
+---
+
+UMJS: nope
+
+UMRE: useReducer & useContext review
+
+VG: nope
+
+CM: useReducer
+
+---
+
+EDH: Considering using Node and `fs` for the file moving and manipulation?
+
 ## 8-29-20
 
 SATURDAY!!
@@ -12,7 +38,7 @@ ISL: GAM = Generalized Additive Models (and using the `gam` plotting functionali
 
 UJS: BFS -- without looking at his code or even pseudocode
 
-UWD: uwd-weather -- Post requests to the weather api
+UWD: uwd-weather -- Post requests to the weather api (revisited uwd-keeper for "completed")
 
 LHTL: Memory -- how to use our spacial memory to our advantage
 
