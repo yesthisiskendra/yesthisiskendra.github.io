@@ -4,6 +4,36 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 9-01-20
+
+New Month, WHO DIS!?
+
+TUESDAY!!
+
+ISL: Start of Chapter 8! Decision trees!
+
+UJS: Still back in heaps -- making my way through BubbleUp() and SinkDown()
+
+UWD: uwd-mailchimp added success and failture pages
+
+LHTL: Review of memory and memory section quiz
+
+---
+
+UMJS: nope
+
+UMRE: yes sandbox here
+
+URN: Section 1 done, successfully got app up and running
+
+VG: Project talk tomorrow
+
+CM: ShareOptions (App_v10), same sandbox
+
+---
+
+EDH: using a combination of Name Mangler and bash scripts to first rename then flatten the many photo files I have
+
 ## 8-31-20
 
 MONDAY!!
