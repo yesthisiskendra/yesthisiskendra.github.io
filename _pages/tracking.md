@@ -4,11 +4,37 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 8-31-20
+
+MONDAY!!
+
+ISL: Interview with Professor's Professor! One of the first people to use k-d trees for learning purposes!! (Trees are NOT good for small samples of social data, but they are good for learning and pattern recognition!)
+
+UJS: Had to backtrack to Priority Queues which is part of the Binary Heaps section as it's a prerequisite to the Graph Searching algorithms!
+
+UWD: uwd-mailchimp is successfully POSTing to the mailchimp API!!
+
+LHTL: Memory palaces -- it is OK if in the beginning, creating mental images is challenging
+
+---
+
+UMJS: nope
+
+UMRE: [sandbox here](https://codesandbox.io/s/cmshareoptionsv5usereducer-2qxud?file=/src/App.js) refactored some of the code from [this lesson](https://www.udemy.com/course/modern-react-bootcamp/learn/lecture/14541150#overview) in preparation for ShareOptions
+
+VG: nope
+
+CM: UMRE on useReducer -- [sandbox here](https://codesandbox.io/s/cmshareoptionsv5usereducer-2qxud?file=/src/App.js)
+
+---
+
+EDH: nope
+
 ## 8-30-20
 
 SUNDAY!!
 
-ISL:
+ISL: Linear Regression for the quiz! `lm(y~x)`
 
 UJS: BFS again -- removed an unnecessary if statement
 
@@ -20,7 +46,7 @@ LHTL: Memory pt2 -- learned about the ASTROCYTES and how Einstein had many more 
 
 UMJS: nope
 
-UMRE: useReducer & useContext review
+UMRE: useReducer & useContext review, umre-spanish-signin
 
 VG: nope
 
