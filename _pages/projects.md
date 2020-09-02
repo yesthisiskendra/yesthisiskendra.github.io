@@ -42,6 +42,8 @@ A (REJECTED!!) chrome extension that turns all images on a page to either cats o
 
 [Countdown timer (8/29/20)](https://umjs-timer.vercel.app/)
 
+[MailChimp Sign Up Sheet (9/2/20)](https://uwd-mailchimp.herokuapp.com/)
+
 ## CURRENT LEARNING PROJECTS:
 
 EDXStats
