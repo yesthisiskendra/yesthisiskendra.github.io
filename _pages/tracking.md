@@ -4,6 +4,64 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 9-03-20
+
+THURSDAY!!
+
+ISL: nope
+
+UJS: supposed to have mock but we BOTH had to reschedule!
+
+UWD: nope
+
+LHTL: nope
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+---
+
+VG: YAAAAS!!!
+
+CM: nope
+
+---
+
+EHD: nope
+
+## 9-02-20
+
+WEDNESDAY!!
+
+ISL: Continuing with Decision Trees! Bushy tree usually means high variability, which means overfitting, which means poor predictability.
+
+UJS: Working on removeMax() for heaps.
+
+UWD: [MailChimp Sign Up Sheet (9/2/20)](https://uwd-mailchimp.herokuapp.com/)
+
+LHTL:
+
+---
+
+UMJS
+UMRE
+URN
+
+---
+
+VG:
+
+CM:
+
+---
+
+EHD:
+
 ## 9-01-20
 
 New Month, WHO DIS!?
