@@ -4,6 +4,36 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 9-04-20
+
+THURSDAY!!
+
+ISL: nope
+
+UJS: nope
+
+UWD: nope
+
+LHTL: nope
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+---
+
+VG: YAAAAS!!!
+
+CM: nope
+
+---
+
+EHD: nope
+
 ## 9-03-20
 
 THURSDAY!!
