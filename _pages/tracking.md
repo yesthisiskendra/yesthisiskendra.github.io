@@ -4,9 +4,69 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 9-06-20
+
+SUNDAY!!
+
+ISL: quick session -- tree pruning!
+
+UJS: quick session -- still working on `sinkDown()`
+
+UWD: quick session -- pushing to heroku, done!
+
+LHTL: quick session -- more with "The Math Guy" on the importance of task switching when things get tricky
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+---
+
+VG: YAAAAS!!!
+
+CM: nope
+
+---
+
+EHD: nope
+
+## 9-05-20
+
+SATURDAY!!
+
+ISL: nope
+
+UJS: nope
+
+UWD: nope
+
+LHTL: nope
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+---
+
+VG: YAAAAS!!!
+
+CM: nope
+
+---
+
+EHD: nope
+
 ## 9-04-20
 
-THURSDAY!!
+FRIDAY!!
 
 ISL: nope
 
