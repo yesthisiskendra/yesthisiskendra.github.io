@@ -4,6 +4,36 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 9-07-20
+
+MONDAY!! HOLIDAY!!
+
+ISL: quick session -- using Cross Validation to prune!!
+
+UJS: quick session -- figured out the loop issue!!
+
+UWD: quick session -- TBD
+
+LHTL: quick session -- TBD
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+---
+
+VG: YAAAAS!!! SO MUCH YAS.
+
+CM: nope
+
+---
+
+EHD: nope
+
 ## 9-06-20
 
 SUNDAY!!
