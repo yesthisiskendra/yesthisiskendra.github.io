@@ -4,6 +4,36 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 9-08-20
+
+TUESDAY
+
+ISL: CLASSIFICATION trees!! When our predictor is qualitative (instead of quantitative) we use CLASSIFICATION (instead of regression) TREES!!
+
+UJS: quick session -- TBD
+
+UWD: quick session -- TBD
+
+LHTL: quick session -- TBD
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+---
+
+VG: YAAAAS!!! SO MUCH YAS.
+
+CM: nope
+
+---
+
+EHD: nope
+
 ## 9-07-20
 
 MONDAY!! HOLIDAY!!
