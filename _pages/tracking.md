@@ -4,6 +4,36 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 9-09-20
+
+WEDNESDAY
+
+ISL: Wrapping up classification trees! Finally starting to learn how to read and use the formulas in the book. Each individual instance is an iteration of the formula. WHAAT.
+
+UJS: Started writing `sinkDown()` from memory and got pretty far!! Did a whole bunch in pseudo code!!
+
+UWD: MOAR GITHUB REVIEW! Don't forget about `git checkout specific-file-name`
+
+LHTL: Today's TL;DR -- Exercise is absolutely necessary for learning.
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+---
+
+VG: YAAAAS!!! SO MUCH YAS. Like 10 hours of YAAAS.
+
+CM: nope
+
+---
+
+EHD: nope
+
 ## 9-08-20
 
 TUESDAY
