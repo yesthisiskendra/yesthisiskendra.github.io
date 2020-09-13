@@ -4,6 +4,56 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 9-13-20
+
+SUNDAY
+
+ISL: Bagging = Boostrap Aggregating = Taking the average of the observations of many different iterations of samples
+
+UJS: Continued to work on `sinkDown()`
+
+UWD: Helping Kristina with nodemon
+
+LHTL: Today's TL;DR -- Ever feel like you've taken a big step back? That is just your brain restructuring the foundation of your understanding of this topic.
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+---
+
+VG: Meeting at 2
+
+CM: nope
+
+---
+
+EHD: nope
+
+## 9-12-20
+
+SATURDAY
+
+(Still nothing because anxious and recovering and distracted)
+
+## 9-11-20
+
+FRIDAY
+
+(Very little because I was still recovering)
+
+VG: Graphs by department
+
+## 9-10-20
+
+THURSDAY
+
+(nothing because I was in the ER)
+
 ## 9-09-20
 
 WEDNESDAY
