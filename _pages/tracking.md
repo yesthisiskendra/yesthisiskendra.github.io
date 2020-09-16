@@ -4,6 +4,38 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 9-16-20
+
+WEDNESDAY
+
+ISL: Intro to BOOSTING!! It's just like bagging, except it learns from itself. It takes what it learned from the first "bag" and makes a more intelligent second tree (and so forth)
+
+UJS: DIY BubbleUp (as part of my DIY Priority Queue)
+
+UWD:
+
+LHTL:
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UPY: nope
+
+---
+
+VG: Quick edits to VG_Time
+
+CM: nope
+
+---
+
+EHD: nope
+
 ## 9-15-20
 
 TUESDAY
@@ -26,7 +58,7 @@ URN: nope
 
 ---
 
-VG: All day all day all day
+VG: VG_Diversity
 
 CM: nope
 
