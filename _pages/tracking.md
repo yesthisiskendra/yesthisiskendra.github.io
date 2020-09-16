@@ -4,17 +4,47 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 9-15-20
+
+TUESDAY
+
+ISL: Random Forest!
+
+UJS: DIY Priority Queue
+
+UWD: Using github for stories
+
+LHTL: Practice quiz
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+---
+
+VG: All day all day all day
+
+CM: nope
+
+---
+
+EHD: nope
+
 ## 9-14-20
 
 MONDAY
 
-ISL: ...
+ISL: Wrapping up bagging -- we get LOO (Leave One Out) Cross-Validation for free!! Because when we are bootstrapping, we are leaving out 1/3 of the data... so we can get LOOCV "for free" by gathering all of the instance where our observation isn't in the training data and average THAT!
 
-UJS: ...
+UJS: A priority queue is a CONCEPT. It can be implemented as a list but this is inefficient. It should be implemented as a heap!
 
-UWD: ...
+UWD: `github/gitignore` is a great resource for what to include in a git ignore
 
-LHTL: ...
+LHTL: Metaphors and analogies are very important -- the stranger and more memorable the better! They help us turn abstract things and things we cannot see (like bonds between chemical elements) into tangible, memorable things. Remember the monkeys and the benzine ring!
 
 ---
 
