@@ -8,7 +8,51 @@ permalink: /tracking/
 
 THURSDAY
 
-ISL: Intro to BOOSTING!! It's just like bagging, except it learns from itself. It takes what it learned from the first "bag" and makes a more intelligent second tree (and so forth)
+ISL: Trees summation -- simple trees are great for readability and interpretability. Unfortunately, bad at predictability. RF, bagging and bootstrapping help trees become better at prediction, but at the cost of interpretability.
+
+UJS: Priority Queues in Python aa/posts/projects/UJS
+
+UWD: More [github learnning!](https://learngitbranching.js.org/)
+
+LHTL: Final!
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UPY: nope
+
+UMS: yes
+
+---
+
+VG: Mentor J
+
+CM: Waiting on chat
+
+---
+
+EHD: nope
+
+---
+
+BOOKS:
+
+WMF: nope
+
+NJC: yes!
+
+DoE: nope
+
+## 9-17-20
+
+THURSDAY
+
+ISL: Boosting is a sequential algorithm. We fit the trees to the residuals. Instead of OVERFITTING, we are going to fit very slowly. We grow SMALL trees instead of large trees.
 
 UJS: Mock Interview with Pat and Priority Queues
 
