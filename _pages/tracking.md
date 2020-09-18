@@ -4,6 +4,40 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 9-17-20
+
+THURSDAY
+
+ISL: Intro to BOOSTING!! It's just like bagging, except it learns from itself. It takes what it learned from the first "bag" and makes a more intelligent second tree (and so forth)
+
+UJS: Mock Interview with Pat and Priority Queues
+
+UWD: More [github learnning!](https://learngitbranching.js.org/)
+
+LHTL: Reframe fear as excitement
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UPY: nope
+
+UMS: yes
+
+---
+
+VG: invoice
+
+CM: chat
+
+---
+
+EHD: nope
+
 ## 9-16-20
 
 WEDNESDAY
@@ -12,9 +46,9 @@ ISL: Intro to BOOSTING!! It's just like bagging, except it learns from itself. I
 
 UJS: DIY BubbleUp (as part of my DIY Priority Queue)
 
-UWD:
+UWD: More [github learnning!](https://learngitbranching.js.org/) "Branch early, branch often." A Branch is simply a pointer to a specific commit. There is no storage or memory overhead when branching!!
 
-LHTL:
+LHTL: Start hard, jump easy
 
 ---
 
@@ -30,7 +64,7 @@ UPY: nope
 
 VG: Quick edits to VG_Time
 
-CM: nope
+CM: shareOptions codeSandbox
 
 ---
 
