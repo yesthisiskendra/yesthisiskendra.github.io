@@ -4,9 +4,58 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
-## 9-17-20
+## 9-18-20
 
-THURSDAY
+SUNDAY
+
+ISL: Bugs with tree package
+
+UJS: Trying again to make my priority queues
+
+UWD: github forking
+
+LHTL/MATH: Started to outline "Math" from inside parent project d/Math
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UPY: nope
+
+UMS: yes! ums-blog!
+
+---
+
+VG: nope
+CM: ...
+
+---
+
+EHD: nope
+
+---
+
+BOOKS:
+
+WMF: nope
+
+NJC: yes!
+
+DoE: nope
+
+## 9-18-20
+
+SATURDAY
+
+None!
+
+## 9-18-20
+
+FRIDAY
 
 ISL: Trees summation -- simple trees are great for readability and interpretability. Unfortunately, bad at predictability. RF, bagging and bootstrapping help trees become better at prediction, but at the cost of interpretability.
 
