@@ -4,7 +4,99 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
-## 9-18-20
+## 9-22-20
+
+### TUESDAY
+
+ISL: Picking up where we left off now that we have no more bugs!!
+
+UJS: Priority queues on paper
+
+UWD: Started EJS
+
+MATH: SREAD CH9
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UPY: nope
+
+UMS: yes! ums-blog! S2 E28
+
+---
+
+VG: nope
+CM: nope
+
+---
+
+EHD: nope
+
+---
+
+BOOKS:
+
+WMF: nope
+
+NJC: yes!
+
+DoE: nope
+
+---
+
+OTHER:
+
+CNLP: V1 all the lines split between two people
+
+## 9-21-20
+
+### MONDAY
+
+ISL: Fixed bug with tree package!!
+
+UJS: Another horrible broken loop
+
+UWD: Wrapping up github
+
+MATH: Introduction to Algorithms Intro
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UPY: nope
+
+UMS: yes! ums-blog!
+
+---
+
+VG: nope
+CM: ...
+
+---
+
+EHD: nope
+
+---
+
+BOOKS:
+
+WMF: nope
+
+NJC: yes!
+
+DoE: nope
+
+## 9-20-20
 
 SUNDAY
 
@@ -47,7 +139,7 @@ NJC: yes!
 
 DoE: nope
 
-## 9-18-20
+## 9-19-20
 
 SATURDAY
 
