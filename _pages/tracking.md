@@ -4,6 +4,55 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 9-23-20
+
+### WEDNESDAY
+
+ISL: More bugs. Going to skip the R section for this chapter and hopefully do it in HOML
+
+UJS: Priority queues on paper part 2 -- time to move on?
+
+UWD: EJS template
+
+MATH:
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UPY: nope
+
+UMS: yes! ums-blog! S2 E28
+
+---
+
+VG: nope
+CM: yes! new way to gather closet.
+
+---
+
+EHD: nope
+
+---
+
+BOOKS:
+
+WMF: nope
+
+NJC: nope
+
+DoE: nope
+
+---
+
+OTHER:
+
+CNLP: nope
+
 ## 9-22-20
 
 ### TUESDAY
