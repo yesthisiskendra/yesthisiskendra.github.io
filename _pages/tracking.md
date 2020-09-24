@@ -4,6 +4,55 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 9-24-20
+
+### THURSDAY
+
+ISL: nope
+
+UJS: Mock with Priority Queues -- breaking down the problem
+
+UWD: Helping K with GET/POST and mailchimp
+
+MATH: nope
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UPY: nope
+
+UMS: yes! ums-blog! S2 E40
+
+---
+
+VG: meeting tomorrow
+CM: nope
+
+---
+
+EHD: nope
+
+---
+
+BOOKS:
+
+WMF: nope
+
+NJC: nope
+
+DoE: nope
+
+---
+
+OTHER:
+
+CNLP: nope
+
 ## 9-23-20
 
 ### WEDNESDAY
