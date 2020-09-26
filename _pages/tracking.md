@@ -4,6 +4,55 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 9-25-20
+
+### FRIDAY
+
+ISL: nope
+
+UJS: nope
+
+UWD: nope
+
+MATH: nope
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UPY: nope
+
+UMS: yes! ums-blog! S2 E40
+
+---
+
+VG: meeting
+CM: nope
+
+---
+
+EHD: nope
+
+---
+
+BOOKS:
+
+WMF: nope
+
+NJC: nope
+
+DoE: nope
+
+---
+
+OTHER:
+
+CNLP: nope
+
 ## 9-24-20
 
 ### THURSDAY
