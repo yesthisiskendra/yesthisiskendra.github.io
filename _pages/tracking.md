@@ -4,6 +4,56 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 9-26-20
+
+### SATURDAY
+
+ISL: nope
+
+UJS: nope
+
+UWD: nope
+
+MATH: nope
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: yes! ~/rn-starter! Finished S2!
+
+UPY: nope
+
+UMS: yes! ums-blog! Finished S2
+
+---
+
+VG: nope
+
+CM: nope
+
+---
+
+EHD: nope
+
+---
+
+BOOKS:
+
+WMF: yes
+
+NJC: nope
+
+DoE: nope
+
+---
+
+OTHER:
+
+CNLP: nope
+
 ## 9-25-20
 
 ### FRIDAY
@@ -41,7 +91,7 @@ EHD: nope
 
 BOOKS:
 
-WMF: nope
+WMF: yes
 
 NJC: nope
 
