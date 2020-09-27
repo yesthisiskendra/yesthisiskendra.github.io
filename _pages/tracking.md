@@ -4,6 +4,12 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 9-27-20
+
+### SUNDAY
+
+Worked on ZERO projects today! Did a bunch of backlogged chores and listened to Wise Man's Fear
+
 ## 9-26-20
 
 ### SATURDAY
