@@ -4,6 +4,58 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 9-28-20
+
+### MONDAY
+
+ISL: Skipped ahead to Chapter 9 (SVMs) and verified the code from the R session works as expected.
+
+UJS: Leetcode, Two Sum. First pass used brute force (two loops), second pass used dictionary! We can create an array of elements 0 to N by doing a little list comprehension `ids = [n for n in range(len(array))]`
+
+UWD: More on EJS! We can now actually add todos to the todo list
+
+MATH: SReed, chapter 7 with 10 minutes of practice
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: yes! ~/rn-starter! Added keys to my flatlist!
+
+UPY: nope
+
+UMS: nope
+
+UTS: Started! uts-fetch, finished S1
+
+---
+
+VG: nope
+
+CM: nope
+
+---
+
+EHD: Lending computer to L
+
+---
+
+BOOKS:
+
+WMF: yes
+
+NJC: nope
+
+DoE: nope
+
+---
+
+OTHER:
+
+CNLP: nope
+
 ## 9-27-20
 
 ### SUNDAY
