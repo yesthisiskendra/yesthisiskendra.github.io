@@ -4,6 +4,58 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 9-29-20
+
+### TUESDAY
+
+ISL: Finished the CH9 coding and IT WORKS!! Now, just need to figure out what it is doing :)
+
+UJS: Leetcode -- Add Two. My first leetcode with LinkedLists and I'm embarrassed to admit it took me a little bit to understand what was actually getting passed to the function. It looked like `11` and `12` but really it was a lowercase L and `1` and `2` -- yep. I felt dumb.
+
+UWD: Even MORE on EJS! Our todo list is pretty now.
+
+MATH: Outlining next steps. Possibly OCW?
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UPY: nope
+
+UMS: nope
+
+UTS: nope
+
+---
+
+VG: Started form + doc
+
+CM: nope
+
+---
+
+EHD: nope
+
+---
+
+BOOKS:
+
+WMF: yes
+
+NJC: nope
+
+DoE: nope
+
+---
+
+OTHER:
+
+CNLP: nope
+
 ## 9-28-20
 
 ### MONDAY
