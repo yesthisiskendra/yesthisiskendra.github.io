@@ -4,6 +4,12 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 9-30-20
+
+### WEDNESDAY
+
+Did nothing as planned -- sent VG form but spent most of the day playing with the debate transcripts!
+
 ## 9-29-20
 
 ### TUESDAY
