@@ -4,6 +4,74 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 10-02-20
+
+### FRIDAY
+
+ISL: nope
+
+UJS: LeetCode October Challenge DAY 2!
+
+UWD: nope
+
+MATH: Additional time on LeetCode
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+---
+
+VG: Still haven't heard back?
+
+CM: Stripe!
+
+---
+
+EHD: none
+
+## 10-01-20
+
+### THURSDAY
+
+ISL: Started the lectures on SVMs
+
+UJS: LeetCode October Challenge DAY 1!
+
+UWD: Finishing uwd-todo-v1
+
+MATH: Additional time on LeetCode
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+---
+
+VG: Haven't heard back
+
+CM: 3+ hours!!!
+
+---
+
+EHD: nope
+
 ## 9-30-20
 
 ### WEDNESDAY
@@ -32,7 +100,7 @@ URN: nope
 
 UPY: nope
 
-UMS: nope
+UMS: FINALLY USING DOCKER!!
 
 UTS: nope
 
