@@ -4,6 +4,40 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 10-03-20
+
+### SATURDAY
+
+ISL: nope
+
+UJS: LeetCode October Challenge DAY 3! It went well!!
+
+UWD: Counting CM work as this <3
+
+MATH: Additional time on LeetCode
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+---
+
+VG: Still haven't heard back?
+
+CM: Stripe! Day 2!!
+
+---
+
+EHD: Taking advantage of L being gone to revamp this.
+
 ## 10-02-20
 
 ### FRIDAY
