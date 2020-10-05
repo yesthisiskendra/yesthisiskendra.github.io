@@ -6,6 +6,40 @@ permalink: /tracking/
 
 ## 10-03-20
 
+### SUNDAY
+
+ISL: nope
+
+UJS: LeetCode October Challenge DAY 4!
+
+UWD: Counting CM work as this <3
+
+MATH: Additional time on LeetCode!
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+---
+
+VG: Still haven't heard back?
+
+CM: Stripe payments working!
+
+---
+
+EHD: All HDs have been cataloged (all files are listed in text files)
+
+## 10-03-20
+
 ### SATURDAY
 
 ISL: nope
