@@ -4,6 +4,22 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 10-05-20
+
+### TUESDAY
+
+ISL: Separating HyperPlanes -- Hyperplanes in 2D are just lines. But, if there are multiple lines that can separate our two classes, how can we choose the best one? We use the `Maximal Margin Classifier` which essentially finds the line where there is the MAXIMUM MARGIN (the biggest space) of differences between the two classes.
+
+UJS: LeetCode October Challenge DAY 4!
+
+UWD: Counting CM work as this <3
+
+MATH: Additional time on LeetCode!
+
+## 10-04-20
+
+### MONDAY
+
 ## 10-03-20
 
 ### SUNDAY
