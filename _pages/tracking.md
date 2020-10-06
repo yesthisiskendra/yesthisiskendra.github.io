@@ -12,9 +12,33 @@ ISL: Separating HyperPlanes -- Hyperplanes in 2D are just lines. But, if there a
 
 UJS: LeetCode October Challenge DAY 4!
 
-UWD: Counting CM work as this <3
+UWD: Spent the day doing the fem-socialproof
 
 MATH: Additional time on LeetCode!
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+---
+
+VG: Meet-n-greet groups
+
+CM: Stripe payments accepting real money!
+
+---
+
+FEM: SocialProof
+
+EHD: next steps?
 
 ## 10-04-20
 
