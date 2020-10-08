@@ -8,6 +8,42 @@ permalink: /tracking/
 
 ### WEDNESDAY
 
+ISL: Nope
+
+UJS: LeetCode & Mock
+
+UWD: Nope
+
+MATH: LeetCode & Mock
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+---
+
+VG: Meet-n-greet groups, VG_P9 jupyter file
+
+CM: nope
+
+---
+
+FEM: nope
+
+EHD: next steps???
+
+## 10-07-20
+
+### WEDNESDAY
+
 ISL: The Support Vector Classifier can take advantage of "soft margins" which are helpful in terms of noise. Adding "soft margins" to our hyperplanes reduces the standard error. But we need to make sure this comes at a cost.
 
 UJS: LeetCode October Challenge DAY 6!
