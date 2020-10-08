@@ -4,7 +4,43 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
-## 10-05-20
+## 10-07-20
+
+### WEDNESDAY
+
+ISL: The Support Vector Classifier can take advantage of "soft margins" which are helpful in terms of noise. Adding "soft margins" to our hyperplanes reduces the standard error. But we need to make sure this comes at a cost.
+
+UJS: LeetCode October Challenge DAY 6!
+
+UWD: Uploaded fem-socialproof
+
+MATH: Additional time on LeetCode!
+
+---
+
+UMJS: YES! Revisited auth and login
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+---
+
+VG: Meet-n-greet groups, VG_P9 jupyter file
+
+CM: Login with umjs-ecomm-catcart
+
+---
+
+FEM: SocialProof submitted
+
+EHD: next steps???
+
+## 10-06-20
 
 ### TUESDAY
 
