@@ -4,9 +4,52 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
-## 10-07-20
 
-### WEDNESDAY
+## 10-10-20
+
+### SATURDAY
+
+ISL: 
+
+UJS: 
+
+UWD: 
+
+MATH: 
+
+---
+
+UMJS: 
+
+UMRE: 
+
+URN: 
+
+UMS: 
+
+UTS: 
+
+---
+
+VG: 
+
+CM: 
+
+---
+
+FEM: 
+
+EHD: 
+
+## 10-09-20
+
+### FRIDAY
+
+No Tracking 
+
+## 10-08-20
+
+### THURSDAY
 
 ISL: Nope
 
