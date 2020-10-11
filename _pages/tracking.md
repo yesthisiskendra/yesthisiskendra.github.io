@@ -4,42 +4,80 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 10-11-20
+
+### SUNDAY
+
+ISL:
+1. Adding "features" like X1 squared, cubed or X1*X2 is a great way to increase dimensions
+2. With increased dimensions, we are giving our SVM classifier more to work with
+3. Kernels are next
+
+UJS: Giving myself a break today
+
+UWD: fem-rockpaper
+
+MATH: UJS: Giving myself a break today
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+---
+
+VG: Meet&Greet -- attempting to add faces
+
+CM: catcart -- getting mongo tied in
+
+--
+
+FEM: fem-rockpaper
+
+EDH: seriously wtf am I doing?
 
 ## 10-10-20
 
 ### SATURDAY
 
-ISL: 
+ISL: yes
 
-UJS: 
+UJS: yes -- didn't finish
 
-UWD: 
+UWD: fem-rockpaper
 
-MATH: 
-
----
-
-UMJS: 
-
-UMRE: 
-
-URN: 
-
-UMS: 
-
-UTS: 
+MATH: yes -- didn't finish
 
 ---
 
-VG: 
+UMJS: nope
 
-CM: 
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
 
 ---
 
-FEM: 
+VG: nope
 
-EHD: 
+CM: nope
+
+---
+
+FEM: nope
+
+EHD: nope
 
 ## 10-09-20
 
