@@ -4,6 +4,78 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 10-13-20
+
+### TUESDAY
+
+ISL: SVMs cont
+
+UJS: Firecode Fib
+
+UWD: 
+
+MATH: Recursion
+
+---
+
+UMJS: ecomm-catcart 
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+---
+
+VG: Meet&Greet -- splitting unity
+
+CM: catcart -- can now log in!
+
+--
+
+FEM: (fem-rockpaper)
+
+EDH: ... goals?
+
+## 10-12-20
+
+### MONDAY
+
+ISL: SVMs cont
+
+UJS: Starting firecode
+
+UWD: ecomm-catcart 
+
+MATH: Starting firecode
+
+---
+
+UMJS: ecomm-catcart 
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+---
+
+VG: Meet&Greet -- splitting unity
+
+CM: catcart -- can now log in!
+
+--
+
+FEM: (fem-rockpaper)
+
+EDH: ... goals?
+
 ## 10-11-20
 
 ### SUNDAY
