@@ -4,6 +4,42 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 10-14-20
+
+### WEDNESDAY
+
+ISL: VG
+
+UJS: Nope
+
+UWD: (CM) ecomm-catcart
+
+MATH: Nope
+
+---
+
+UMJS: ecomm-catcart 
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+---
+
+VG: Meet&Greet -- 50 groups, txt and csv
+
+CM: catcart -- can now log in!
+
+--
+
+FEM: (fem-rockpaper)
+
+EDH: ... goals?
+
 ## 10-13-20
 
 ### TUESDAY
