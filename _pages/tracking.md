@@ -8,6 +8,42 @@ permalink: /tracking/
 
 ### WEDNESDAY
 
+ISL: Wrapping up SVMs
+
+UJS: Mock
+
+UWD: (CM) ecomm-catcart
+
+MATH: Mock
+
+---
+
+UMJS: ecomm-catcart 
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+---
+
+VG: Sent JD
+
+CM: catcart 
+
+--
+
+FEM: (fem-rockpaper)
+
+EDH: ... goals?
+
+## 10-14-20
+
+### WEDNESDAY
+
 ISL: VG
 
 UJS: Nope
