@@ -4,9 +4,45 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
-## 10-14-20
+## 10-16-20
 
-### WEDNESDAY
+### FRIDAY
+
+ISL: Starting the Ch 9 R sessions
+
+UJS: Reverse matrix (Easy) in firecode >> leetcode 
+
+UWD: (CM) ecomm-catcart
+
+MATH: ... 
+
+---
+
+UMJS: ecomm-catcart 
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+---
+
+VG: Start zipcode project
+
+CM: ecomm-catcart
+
+--
+
+FEM: (fem-rockpaper) nope
+
+EDH: ... goals?
+
+## 10-15-20
+
+### THURSDAY
 
 ISL: Wrapping up SVMs
 
