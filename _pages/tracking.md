@@ -4,6 +4,54 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 10-19-20
+
+### MONDAY
+
+ISL: Generating fake data for SVM experiments!
+
+UJS: Wrote PLANNING DOC
+
+UWD: (CM) ecomm-catcart cont...
+
+MATH: nope
+
+---
+
+UMJS: ecomm-catcart & PLANNING DOC
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+---
+
+VG:  Zip Code project, Org chart project
+
+CM: ecomm-catcart
+
+--
+
+FEM: (fem-rockpaper) nope
+
+EDH: ... goals?
+
+## 10-18-20
+
+### SUNDAY
+
+MEGA LUMP DAY
+
+## 10-17-20
+
+### SATURDAY
+
+Made Halloween Costume!!
+
 ## 10-16-20
 
 ### FRIDAY
