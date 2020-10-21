@@ -3,6 +3,41 @@ layout: home
 title: "Tracking"
 permalink: /tracking/
 ---
+## 10-20-20
+
+### TUESDAY
+
+ISL: Generating ALL the maps and data for VG_P10
+
+UJS: Counting my recursion practice for VG_P11
+
+UWD: .......... hoping to hop on this tonight (CM) ecomm-catcart cont...
+
+MATH: Counting my recursion practice for VG_P11
+
+---
+
+UMJS: ecomm-catcart & PLANNING DOC
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+---
+
+VG:  Zip Code project, Org chart project
+
+CM: ecomm-catcart
+
+--
+
+FEM: (fem-rockpaper) nope
+
+EDH: ... goals?
 
 ## 10-19-20
 
