@@ -3,6 +3,26 @@ layout: home
 title: "Tracking"
 permalink: /tracking/
 ---
+
+
+## 10-21-20
+
+### WEDNESDAY
+
+ISL: Counting VG -- Adding return statements to my recursive loop. Simply put the recursive function inside another function (duh)
+
+UJS: Counting VG -- since still working with recursion, counting this
+
+UWD: nope
+
+MATH: nope
+
+---
+
+VG: P_11 added all supervisors to sheet
+
+CM: Nope
+
 ## 10-20-20
 
 ### TUESDAY
