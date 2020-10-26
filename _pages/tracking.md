@@ -4,6 +4,11 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 10-25-20
+
+### SUNDAY
+
+Took a quick hiatus from tracking to launch into another round of Whole 30. 
 
 ## 10-21-20
 
