@@ -4,13 +4,49 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
-## 10-26-20
+## 10-25-20
 
 ### MONDAY
 
 ISL: Finished the SVM Section
 
-UPDATE: Changing tracking starting tomorrow AM
+UJS: Selection sort
+
+UWD: Building a REST api
+
+MATH: nope
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+UMS: nope
+
+UPY: nope
+
+UPYD: nope
+
+---
+
+VG:  Zip Code project, Org chart project
+
+CM: ppbackend
+
+--
+
+FEM: (fem-rockpaper) nope
+
+EDH: ... goals?
+
+## 10-26-20
 
 ## 10-25-20
 
