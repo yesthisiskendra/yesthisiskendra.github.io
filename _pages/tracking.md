@@ -4,6 +4,14 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 10-26-20
+
+### MONDAY
+
+ISL: Finished the SVM Section
+
+UPDATE: Changing tracking starting tomorrow AM
+
 ## 10-25-20
 
 ### SUNDAY
