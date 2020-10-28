@@ -4,6 +4,48 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 10-27-20
+
+### TUESDAY
+
+ISL: Started the Unsupervised learning section and PCA!
+
+UJS: Wrote Selection Sort!
+
+UWD: Mongo installation party
+
+MATH: nope
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+UMS: nope
+
+UPY: nope
+
+UPYD: nope
+
+---
+
+VG: Nope
+
+CM: ppbackend 
+
+--
+
+FEM: (fem-rockpaper) nope
+
+EDH: ... goals?
+
 ## 10-25-20
 
 ### MONDAY
