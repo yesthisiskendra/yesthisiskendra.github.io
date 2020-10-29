@@ -4,6 +4,49 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+
+## 10-28-20
+
+### WEDNESDAY
+
+ISL: More about PCA!
+
+UJS: Investigated Pat's link
+
+UWD: CM
+
+MATH: ANKI
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+UMS: nope
+
+UPY: nope
+
+UPYD: nope
+
+---
+
+VG: Nope
+
+CM: ppbackend 
+
+--
+
+FEM: (fem-rockpaper) nope
+
+EDH: ... goals?
+
 ## 10-27-20
 
 ### TUESDAY
