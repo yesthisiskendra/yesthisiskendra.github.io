@@ -4,6 +4,54 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 10-30-20
+
+### FRIDAY
+
+CM ALL DAY ALL DAY ALL DAY
+
+
+## 10-29-20
+
+### THURSDAY
+
+ISL: More about PCA!
+
+UJS: Selection Sort, repetition
+
+UWD: Mongo party
+
+MATH: Crickets
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+UMS: nope
+
+UPY: nope
+
+UPYD: nope
+
+---
+
+VG: Meeting
+
+CM: ppbackend 
+
+--
+
+FEM: (fem-rockpaper) nope
+
+EDH: ... goals?
 
 ## 10-28-20
 
