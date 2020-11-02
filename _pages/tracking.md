@@ -4,12 +4,17 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 11-01-20
+
+### SUNDAY
+
+NaNoWriMo: Day 1!
+
 ## 10-30-20
 
 ### FRIDAY
 
 CM ALL DAY ALL DAY ALL DAY
-
 
 ## 10-29-20
 
