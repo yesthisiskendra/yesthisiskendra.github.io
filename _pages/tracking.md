@@ -4,6 +4,49 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+
+## 11-02-20
+
+### MONDAY
+
+ISL: Still on unsupervised learning
+
+UJS: CTCI Problems 1 and 2
+
+UWD: Looking ahead 
+
+MATH: None
+
+---
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+UMS: nope
+
+UPY: nope
+
+UPYD: nope
+
+---
+
+VG: Nope
+
+CM: Share on extension working 
+
+--
+
+FEM: (fem-rockpaper) nope
+
+EDH: ... goals?
+
 ## 11-01-20
 
 ### SUNDAY
