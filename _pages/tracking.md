@@ -9,11 +9,15 @@ permalink: /tracking/
 
 ### MONDAY
 
+NaNoWriMo: 3,334
+
+---
+
 ISL: Still on unsupervised learning
 
 UJS: CTCI Problems 1 and 2
 
-UWD: Looking ahead 
+UWD: uwd-wiki (practicing with REST)
 
 MATH: None
 
@@ -51,7 +55,7 @@ EDH: ... goals?
 
 ### SUNDAY
 
-NaNoWriMo: Day 1!
+NaNoWriMo: Day 1! 1667
 
 ## 10-30-20
 
