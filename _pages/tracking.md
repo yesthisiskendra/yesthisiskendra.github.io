@@ -5,6 +5,104 @@ permalink: /tracking/
 ---
 
 
+## 11-04-20
+
+### WEDNESDAY
+
+NaNoWriMo: TBD
+
+---
+
+ISL: Still on unsupervised learning
+
+UJS: CTCI Review problems 1 & 2
+
+UWD: uwd-wiki (practicing with REST)
+
+MATH: Anki
+
+---
+
+USK: nope
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+UMS: nope
+
+UPY: nope
+
+UPYD: nope
+
+---
+
+VG: VG_P9_DataCleaning + supervisors
+
+CM: nope
+
+--
+
+FEM: (fem-rockpaper) nope
+
+EDH: ... goals?
+
+
+## 11-03-20
+
+### TUESDAY
+
+NaNoWriMo: 4,792
+
+---
+
+ISL: Still on unsupervised learning
+
+UJS: CTCI Problems 3 and 4
+
+UWD: uwd-wiki (practicing with REST)
+
+MATH: nope
+
+---
+
+USK: yes!
+
+UMJS: nope
+
+UMRE: nope
+
+URN: nope
+
+UMS: nope
+
+UTS: nope
+
+UMS: nope
+
+UPY: nope
+
+UPYD: nope
+
+---
+
+VG: nope
+
+CM: nope
+
+--
+
+FEM: (fem-rockpaper) nope
+
+EDH: ... goals?
+
+
 ## 11-02-20
 
 ### MONDAY
