@@ -4,6 +4,18 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 11-13-20
+
+UEL: uel-boilerplates
+
+## 11-12-20
+
+UJS: Mock 6 problems
+
+W30: Recipe Scraper 
+
+VG: Submit app
+
 ## 11-11-20
 
 VG: VG_P9-V2
