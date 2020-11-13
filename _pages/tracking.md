@@ -4,6 +4,12 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 11-11-20
+
+VG: VG_P9-V2
+
+UEL?
+
 ## 11-10-20
 
 VG: VG_P9-V2
