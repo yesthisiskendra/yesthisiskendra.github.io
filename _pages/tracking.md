@@ -4,6 +4,16 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 11-15-20
+
+UEL: uel-boilerplates/ -- tasky
+
+SPC: Medicine Cabinet
+
+GS: YTK (add websites)
+
+GS: DPL (add scheduling)
+
 ## 11-13-20
 
 UEL: uel-boilerplates
