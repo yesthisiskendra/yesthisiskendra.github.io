@@ -4,6 +4,12 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 11-16-20
+
+Imperfect Foods: Script running and exporting CSV 
+
+LS: ls-express 
+
 ## 11-15-20
 
 UEL: uel-boilerplates/ -- tasky
