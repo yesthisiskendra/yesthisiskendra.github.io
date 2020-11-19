@@ -4,6 +4,14 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 11-18-20
+
+VG: VG_P13
+
+## 11-17-20
+
+LS: ls-express endpoints added 
+
 ## 11-16-20
 
 Imperfect Foods: Script running and exporting CSV 
