@@ -3,6 +3,13 @@ layout: home
 title: "Tracking"
 permalink: /tracking/
 ---
+## 11-19-20
+
+VG: VG COVID mtg
+
+LS: Both HBH & MB on amount/unit, ls-express, e-r-boilerplate
+
+UEL: tasky and ipc 
 
 ## 11-18-20
 
