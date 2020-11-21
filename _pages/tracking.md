@@ -3,6 +3,15 @@ layout: home
 title: "Tracking"
 permalink: /tracking/
 ---
+
+## 11-20-20
+
+VG: VG_P13 email lookup
+
+VG: VG_P9_V2, sheet to teams
+
+LS: [Lettuce Shop API](https://lettuceshop-api.herokuapp.com/)
+
 ## 11-19-20
 
 VG: VG COVID mtg
