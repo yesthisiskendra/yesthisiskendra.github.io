@@ -3,6 +3,15 @@ layout: home
 title: "Tracking"
 permalink: /tracking/
 ---
+## 11-23-20
+
+ISL/UPY/UPYD: UPYD! Scatterplots
+
+UJS/CTCI/MOCK: Reviewed Mock Doc, Consulted Algos in C
+
+UWD/UEL/etc: ls-react-frontend
+
+VG: None
 
 ## 11-20-20
 
