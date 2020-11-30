@@ -3,6 +3,27 @@ layout: home
 title: "Tracking"
 permalink: /tracking/
 ---
+
+## 11-29-20
+
+Thanksgiving Week! Most of the week was spent not really working on projects but more working on getting ready for Thanksgiving.
+
+### THINGS I STARTED:
+
+1. lettuceshop-api.herokuapp.com
+2. lettuceshop.herokuapp.com
+3. lettuceshop-backend.herokuapp.com
+
+### (More details)
+
+1. lettuceshop-api.herokuapp.com
+   1. recipe API for hbh and mb
+2. lettuceshop.herokuapp.com
+   1. lettuce shop front end
+3. lettuceshop-backend.herokuapp.com
+   1. user sign in/ sign up
+   2. Moved lettuceshop-api endpoints here
+   
 ## 11-23-20
 
 ISL/UPY/UPYD: UPYD! Scatterplots
