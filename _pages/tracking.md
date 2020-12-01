@@ -4,6 +4,27 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 11-30-20
+
+UWD:
+
+* [react-router-dom](https://codesandbox.io/s/react-router-dom-practice-gsyzx?file=/src/Projects.js:0-174)
+* Inspiration from earlier [here](https://medium.com/develop-and-deploy-a-complex-serverless-web-app/add-react-router-dom-to-a-reactjs-with-material-ui-project-part-4-f8d7e02f041a)
+
+
+UJS/CTCI/(PE): 
+
+* Problem 1
+* Problem 2
+* Started researching Problem 3
+
+UPYD:
+
+1. [Started Rekognition Project](https://medium.com/develop-and-deploy-a-complex-serverless-web-app/add-react-router-dom-to-a-reactjs-with-material-ui-project-part-4-f8d7e02f041a)
+2. Tried to find old virtual environment (UPYD?)
+3. UPYD/StockTicker.py
+
+
 ## 11-29-20
 
 Thanksgiving Week! Most of the week was spent not really working on projects but more working on getting ready for Thanksgiving.
