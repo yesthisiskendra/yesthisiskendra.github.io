@@ -4,6 +4,40 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 12-04-20
+
+### PROJECTS:
+
+* EMMA: GTD
+* CLARA: XMAS Card, addresses
+* CATMOM: Vet Appointments
+  
+## 12-03-20
+
+### PROJECTS:
+
+* CK: House plan
+* CLARA: XMAS Card
+* UJS: Project Euler
+* EMMA: New Jim Crow
+
+## 12-02-20
+
+### PROJECTS:
+
+* CK: House plan
+* CLARA: XMAS Card
+* UJS: Project Euler
+  
+## 12-01-20
+
+Birthday!
+
+### PROJECTS:
+
+* XMAS CARD! (started!)
+* Project Euler
+
 ## 11-30-20
 
 UWD:
