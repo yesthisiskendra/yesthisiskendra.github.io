@@ -9,8 +9,17 @@ permalink: /tracking/
 ### PROJECTS:
 
 * EMMA: GTD
+* EMMA: Burk
 * CLARA: XMAS Card, addresses
 * CATMOM: Vet Appointments
+* DAN: ls-scraper (recipe aggregation)
+* AARON: LS: ls-express-backend
+* AARON: LS: ls-react-frontend
+* DAN: UPYD: StockTicker.py
+* DAN: LS: imperfect-foods
+* AARON: UEL: Projects/uel-boilerplates/ElectronCode/boilerplates/tasky/app
+* AARON: UMS: ums-blog
+* AARON: UEL: electron-react
   
 ## 12-03-20
 
