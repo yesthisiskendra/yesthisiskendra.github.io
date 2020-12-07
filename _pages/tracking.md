@@ -4,6 +4,20 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 12-06-20
+
+### PROJECTS:
+
+* LS: LS_AnnaExtension, LS_GimmeSomeOven
+* UPYD: StockTicker 
+
+## 12-05-20
+
+### PROJECTS:
+
+* UPYD: StockTicker 
+* UPYD: MoodTicker 
+
 ## 12-04-20
 
 ### PROJECTS:
