@@ -14,6 +14,8 @@ Coming soon
 
 ### THINGS I'VE MADE FOR ONE REASON OR ANOTHER:
 
+[Stock Dashboard](https://stockdashboardforstonks.herokuapp.com/)
+
 [WikiSummarizer](http://wikisummarizer.herokuapp.com/)
 
 [MoovieRanker](https://aaroncaraway.github.io/moovieranker/)

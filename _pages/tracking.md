@@ -4,6 +4,15 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 12-08-20
+
+### PROJECTS:
+
+* XMAS2020 CARDS
+* UPYD: [StockTicker pushed live](https://stockdashboardforstonks.herokuapp.com/)
+* UJS: Mock review binary search, again
+* PE: #7
+* SLIDES: "Project Ben"
 
 ## 12-07-20
 
