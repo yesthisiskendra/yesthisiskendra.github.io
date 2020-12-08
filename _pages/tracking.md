@@ -4,6 +4,16 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+
+## 12-07-20
+
+### PROJECTS:
+
+* XMAS2020 CARDS
+* UPYD: StockTicker complete
+* UJS: Mock review binary search
+* PE: #6
+
 ## 12-06-20
 
 ### PROJECTS:
