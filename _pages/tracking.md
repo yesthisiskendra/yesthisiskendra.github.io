@@ -4,9 +4,23 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+
+## 12-19-20
+
+### NEW PROJECTS (started/added today)
+
+* Quaranteam Guidelines
+
+### PROJECTS: 
+
+* ls-annaextension [on heroku here](https://annaextension.herokuapp.com/)
+
 ## 12-17-20
 
 ### NEW PROJECTS (started/added today)
+
+* JOURNAL_TextMessages (jupyter)
+* ls-annaextension [on heroku here](https://annaextension.herokuapp.com/)
 
 ### PROJECTS: 
 
