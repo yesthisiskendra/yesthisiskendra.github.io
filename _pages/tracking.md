@@ -4,7 +4,22 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 12-21-20
 
+### NEW PROJECTS (started/added today)
+
+* umrr-jsx
+* UPY.md
+* UMRR.md
+* GTD user stories
+
+### PROJECTS: 
+
+* STATS: UPY
+* UJS: Invert binary tree
+* UWD: JQuery
+* PE: #12 & #102
+* DDOD: old database on external HD #1
 
 ## 12-20-20
 
