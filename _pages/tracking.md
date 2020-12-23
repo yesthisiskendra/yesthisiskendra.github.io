@@ -4,6 +4,13 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 12-22-20
+
+* UPY
+* UJS leetcode
+* UWD
+* Restarted knitting blanket
+
 ## 12-21-20
 
 ### NEW PROJECTS (started/added today)
