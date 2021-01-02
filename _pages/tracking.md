@@ -4,6 +4,13 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 01-01-21
+
+* GTD Slides
+* GTD_2021
+* YIR_GoogleDrive (new docs and spreadsheets created)
+* YIR_ProjectFiles (new projects created in projects folder)
+
 ## 12-22-20
 
 * UPY
