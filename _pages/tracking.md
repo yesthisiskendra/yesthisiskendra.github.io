@@ -4,6 +4,10 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 01-02-21
+
+Continued work on GTD_2021
+
 ## 01-01-21
 
 * GTD Slides
