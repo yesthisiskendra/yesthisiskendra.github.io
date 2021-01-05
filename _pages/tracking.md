@@ -4,6 +4,12 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 01-04-21
+
+* Designing my life
+* GTD4T
+* Headless WP
+
 ## 01-03-21
 
 * Continued work on GTD_2021
