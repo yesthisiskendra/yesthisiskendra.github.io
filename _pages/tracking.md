@@ -4,6 +4,17 @@ title: "Tracking"
 permalink: /tracking/
 ---
 
+## 01-25-21
+
+* EHD -- Getting all photos onto EHD_7 (also getting modtime -- currently not working)
+* kendraosburn.com
+* Portfolio projects (3 ds, 3 wd)
+* Kittens
+* UPY (recommender systems)
+* UJS (leetcode parens)
+* UWD
+* Math
+
 ## 01-04-21
 
 * Designing my life
