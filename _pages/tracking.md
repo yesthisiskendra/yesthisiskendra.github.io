@@ -1,30 +1,43 @@
 ---
 layout: home
-title: "Tracking"
+title: 'Tracking'
 permalink: /tracking/
 ---
 
+## 01-31-21
+
+- EHD
+- [Reddit pics](https://aaroncaraway.github.io/react-reddit-pics/)
+- kendraosburn.com
+- Kittens
+- Momentum
+
 ## 01-25-21
 
-* EHD -- Getting all photos onto EHD_7 (also getting modtime -- currently not working)
-* kendraosburn.com
-* Portfolio projects (3 ds, 3 wd)
-* Kittens
-* UPY (recommender systems)
-* UJS (leetcode parens)
-* UWD
-* Math
+- EHD -- Getting all photos onto EHD_7 (also getting modtime -- currently not working)
+- kendraosburn.com
+- Portfolio projects (3 ds, 3 wd)
+- Kittens
+- UPY (recommender systems)
+- UJS (leetcode parens)
+- UWD
+- Math
+
+### BACKLOG:
+
+- LettuceShop
+- Anna Extension
 
 ## 01-04-21
 
-* Designing my life
-* GTD4T
-* Headless WP
+- Designing my life
+- GTD4T
+- Headless WP
 
 ## 01-03-21
 
-* Continued work on GTD_2021
-* UMRR
+- Continued work on GTD_2021
+- UMRR
 
 ## 01-02-21
 
@@ -32,167 +45,165 @@ Continued work on GTD_2021
 
 ## 01-01-21
 
-* GTD Slides
-* GTD_2021
-* YIR_GoogleDrive (new docs and spreadsheets created)
-* YIR_ProjectFiles (new projects created in projects folder)
+- GTD Slides
+- GTD_2021
+- YIR_GoogleDrive (new docs and spreadsheets created)
+- YIR_ProjectFiles (new projects created in projects folder)
 
 ## 12-22-20
 
-* UPY
-* UJS leetcode
-* UWD
-* Restarted knitting blanket
+- UPY
+- UJS leetcode
+- UWD
+- Restarted knitting blanket
 
 ## 12-21-20
 
 ### NEW PROJECTS (started/added today)
 
-* umrr-jsx
-* UPY.md
-* UMRR.md
-* GTD user stories
+- umrr-jsx
+- UPY.md
+- UMRR.md
+- GTD user stories
 
-### PROJECTS: 
+### PROJECTS:
 
-* STATS: UPY
-* UJS: Invert binary tree
-* UWD: JQuery
-* PE: #12 & #102
-* DDOD: old database on external HD #1
+- STATS: UPY
+- UJS: Invert binary tree
+- UWD: JQuery
+- PE: #12 & #102
+- DDOD: old database on external HD #1
 
 ## 12-20-20
 
 ### NEW PROJECTS (started/added today)
 
-* ls-editablelist [on heroku here](https://annaslist.herokuapp.com/)
+- ls-editablelist [on heroku here](https://annaslist.herokuapp.com/)
 
 ## 12-19-20
 
 ### NEW PROJECTS (started/added today)
 
-* Quaranteam Guidelines
+- Quaranteam Guidelines
 
-### PROJECTS: 
+### PROJECTS:
 
-* ls-annaextension [on heroku here](https://annaextension.herokuapp.com/)
+- ls-annaextension [on heroku here](https://annaextension.herokuapp.com/)
 
 ## 12-17-20
 
 ### NEW PROJECTS (started/added today)
 
-* JOURNAL_TextMessages (jupyter)
-* ls-annaextension [on heroku here](https://annaextension.herokuapp.com/)
+- JOURNAL_TextMessages (jupyter)
+- ls-annaextension [on heroku here](https://annaextension.herokuapp.com/)
 
-### PROJECTS: 
+### PROJECTS:
 
 ## 12-16-20
 
 ### NEW PROJECTS (started/added today)
 
-* panacea street
+- panacea street
 
-### PROJECTS: 
+### PROJECTS:
 
-* Anna Extension
-* PE: #11
+- Anna Extension
+- PE: #11
 
 ## 12-08-20
 
 ### PROJECTS:
 
-* XMAS2020 CARDS
-* UPYD: [StockTicker pushed live](https://stockdashboardforstonks.herokuapp.com/)
-* UJS: Mock review binary search, again
-* PE: #7
-* SLIDES: "Project Ben"
+- XMAS2020 CARDS
+- UPYD: [StockTicker pushed live](https://stockdashboardforstonks.herokuapp.com/)
+- UJS: Mock review binary search, again
+- PE: #7
+- SLIDES: "Project Ben"
 
 ## 12-07-20
 
 ### PROJECTS:
 
-* XMAS2020 CARDS
-* UPYD: StockTicker complete
-* UJS: Mock review binary search
-* PE: #6
+- XMAS2020 CARDS
+- UPYD: StockTicker complete
+- UJS: Mock review binary search
+- PE: #6
 
 ## 12-06-20
 
 ### PROJECTS:
 
-* LS: LS_AnnaExtension, LS_GimmeSomeOven
-* UPYD: StockTicker 
+- LS: LS_AnnaExtension, LS_GimmeSomeOven
+- UPYD: StockTicker
 
 ## 12-05-20
 
 ### PROJECTS:
 
-* UPYD: StockTicker 
-* UPYD: MoodTicker 
+- UPYD: StockTicker
+- UPYD: MoodTicker
 
 ## 12-04-20
 
 ### PROJECTS:
 
-* EMMA: GTD
-* EMMA: Burk
-* CLARA: XMAS Card, addresses
-* CATMOM: Vet Appointments
-* DAN: ls-scraper (recipe aggregation)
-* AARON: LS: ls-express-backend
-* AARON: LS: ls-react-frontend
-* DAN: UPYD: StockTicker.py
-* DAN: LS: imperfect-foods
-* AARON: UEL: Projects/uel-boilerplates/ElectronCode/boilerplates/tasky/app
-* AARON: UMS: ums-blog
-* AARON: UEL: electron-react
-  
+- EMMA: GTD
+- EMMA: Burk
+- CLARA: XMAS Card, addresses
+- CATMOM: Vet Appointments
+- DAN: ls-scraper (recipe aggregation)
+- AARON: LS: ls-express-backend
+- AARON: LS: ls-react-frontend
+- DAN: UPYD: StockTicker.py
+- DAN: LS: imperfect-foods
+- AARON: UEL: Projects/uel-boilerplates/ElectronCode/boilerplates/tasky/app
+- AARON: UMS: ums-blog
+- AARON: UEL: electron-react
+
 ## 12-03-20
 
 ### PROJECTS:
 
-* CK: House plan
-* CLARA: XMAS Card
-* UJS: Project Euler
-* EMMA: New Jim Crow
+- CK: House plan
+- CLARA: XMAS Card
+- UJS: Project Euler
+- EMMA: New Jim Crow
 
 ## 12-02-20
 
 ### PROJECTS:
 
-* CK: House plan
-* CLARA: XMAS Card
-* UJS: Project Euler
-  
+- CK: House plan
+- CLARA: XMAS Card
+- UJS: Project Euler
+
 ## 12-01-20
 
 Birthday!
 
 ### PROJECTS:
 
-* XMAS CARD! (started!)
-* Project Euler
+- XMAS CARD! (started!)
+- Project Euler
 
 ## 11-30-20
 
 UWD:
 
-* [react-router-dom](https://codesandbox.io/s/react-router-dom-practice-gsyzx?file=/src/Projects.js:0-174)
-* Inspiration from earlier [here](https://medium.com/develop-and-deploy-a-complex-serverless-web-app/add-react-router-dom-to-a-reactjs-with-material-ui-project-part-4-f8d7e02f041a)
+- [react-router-dom](https://codesandbox.io/s/react-router-dom-practice-gsyzx?file=/src/Projects.js:0-174)
+- Inspiration from earlier [here](https://medium.com/develop-and-deploy-a-complex-serverless-web-app/add-react-router-dom-to-a-reactjs-with-material-ui-project-part-4-f8d7e02f041a)
 
+UJS/CTCI/(PE):
 
-UJS/CTCI/(PE): 
-
-* Problem 1
-* Problem 2
-* Started researching Problem 3
+- Problem 1
+- Problem 2
+- Started researching Problem 3
 
 UPYD:
 
 1. [Started Rekognition Project](https://medium.com/develop-and-deploy-a-complex-serverless-web-app/add-react-router-dom-to-a-reactjs-with-material-ui-project-part-4-f8d7e02f041a)
 2. Tried to find old virtual environment (UPYD?)
 3. UPYD/StockTicker.py
-
 
 ## 11-29-20
 
@@ -213,7 +224,7 @@ Thanksgiving Week! Most of the week was spent not really working on projects but
 3. lettuceshop-backend.herokuapp.com
    1. user sign in/ sign up
    2. Moved lettuceshop-api endpoints here
-   
+
 ## 11-23-20
 
 ISL/UPY/UPYD: UPYD! Scatterplots
@@ -238,7 +249,7 @@ VG: VG COVID mtg
 
 LS: Both HBH & MB on amount/unit, ls-express, e-r-boilerplate
 
-UEL: tasky and ipc 
+UEL: tasky and ipc
 
 ## 11-18-20
 
@@ -246,13 +257,13 @@ VG: VG_P13
 
 ## 11-17-20
 
-LS: ls-express endpoints added 
+LS: ls-express endpoints added
 
 ## 11-16-20
 
-Imperfect Foods: Script running and exporting CSV 
+Imperfect Foods: Script running and exporting CSV
 
-LS: ls-express 
+LS: ls-express
 
 ## 11-15-20
 
@@ -272,7 +283,7 @@ UEL: uel-boilerplates
 
 UJS: Mock 6 problems
 
-W30: Recipe Scraper 
+W30: Recipe Scraper
 
 VG: Submit app
 
@@ -287,7 +298,6 @@ UEL?
 VG: VG_P9-V2
 
 RecipeScraper
-
 
 ## 11-09-20
 
@@ -345,7 +355,6 @@ FEM: (fem-rockpaper) nope
 
 EDH: ... goals?
 
-
 ## 11-03-20
 
 ### TUESDAY
@@ -394,7 +403,6 @@ FEM: (fem-rockpaper) nope
 
 EDH: ... goals?
 
-
 ## 11-02-20
 
 ### MONDAY
@@ -433,7 +441,7 @@ UPYD: nope
 
 VG: Nope
 
-CM: Share on extension working 
+CM: Share on extension working
 
 --
 
@@ -487,7 +495,7 @@ UPYD: nope
 
 VG: Meeting
 
-CM: ppbackend 
+CM: ppbackend
 
 --
 
@@ -529,7 +537,7 @@ UPYD: nope
 
 VG: Nope
 
-CM: ppbackend 
+CM: ppbackend
 
 --
 
@@ -571,7 +579,7 @@ UPYD: nope
 
 VG: Nope
 
-CM: ppbackend 
+CM: ppbackend
 
 --
 
@@ -611,7 +619,7 @@ UPYD: nope
 
 ---
 
-VG:  Zip Code project, Org chart project
+VG: Zip Code project, Org chart project
 
 CM: ppbackend
 
@@ -627,7 +635,7 @@ EDH: ... goals?
 
 ### SUNDAY
 
-Took a quick hiatus from tracking to launch into another round of Whole 30. 
+Took a quick hiatus from tracking to launch into another round of Whole 30.
 
 ## 10-21-20
 
@@ -673,7 +681,7 @@ UTS: nope
 
 ---
 
-VG:  Zip Code project, Org chart project
+VG: Zip Code project, Org chart project
 
 CM: ecomm-catcart
 
@@ -709,7 +717,7 @@ UTS: nope
 
 ---
 
-VG:  Zip Code project, Org chart project
+VG: Zip Code project, Org chart project
 
 CM: ecomm-catcart
 
@@ -737,15 +745,15 @@ Made Halloween Costume!!
 
 ISL: Starting the Ch 9 R sessions
 
-UJS: Reverse matrix (Easy) in firecode >> leetcode 
+UJS: Reverse matrix (Easy) in firecode >> leetcode
 
 UWD: (CM) ecomm-catcart
 
-MATH: ... 
+MATH: ...
 
 ---
 
-UMJS: ecomm-catcart 
+UMJS: ecomm-catcart
 
 UMRE: nope
 
@@ -781,7 +789,7 @@ MATH: Mock
 
 ---
 
-UMJS: ecomm-catcart 
+UMJS: ecomm-catcart
 
 UMRE: nope
 
@@ -795,7 +803,7 @@ UTS: nope
 
 VG: Sent JD
 
-CM: catcart 
+CM: catcart
 
 --
 
@@ -817,7 +825,7 @@ MATH: Nope
 
 ---
 
-UMJS: ecomm-catcart 
+UMJS: ecomm-catcart
 
 UMRE: nope
 
@@ -847,13 +855,13 @@ ISL: SVMs cont
 
 UJS: Firecode Fib
 
-UWD: 
+UWD:
 
 MATH: Recursion
 
 ---
 
-UMJS: ecomm-catcart 
+UMJS: ecomm-catcart
 
 UMRE: nope
 
@@ -883,13 +891,13 @@ ISL: SVMs cont
 
 UJS: Starting firecode
 
-UWD: ecomm-catcart 
+UWD: ecomm-catcart
 
 MATH: Starting firecode
 
 ---
 
-UMJS: ecomm-catcart 
+UMJS: ecomm-catcart
 
 UMRE: nope
 
@@ -916,7 +924,8 @@ EDH: ... goals?
 ### SUNDAY
 
 ISL:
-1. Adding "features" like X1 squared, cubed or X1*X2 is a great way to increase dimensions
+
+1. Adding "features" like X1 squared, cubed or X1\*X2 is a great way to increase dimensions
 2. With increased dimensions, we are giving our SVM classifier more to work with
 3. Kernels are next
 
@@ -990,7 +999,7 @@ EHD: nope
 
 ### FRIDAY
 
-No Tracking 
+No Tracking
 
 ## 10-08-20
 
