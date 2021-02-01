@@ -4,6 +4,40 @@ title: 'Tracking'
 permalink: /tracking/
 ---
 
+## 02-01-21
+
+### PD:
+
+- STATS: UPY: Recommender System, pt. 2
+- UJS: Parens -- read through solutions after another 25 min of being stuck
+- UWD: react-reddit-pics
+- MATH: 3B1B Linear Algebra Ch.4 -- 3D Matrix Multiplication (by hand!)
+
+### ONGOING:
+
+- EHD
+- MOM2
+- KO.com
+
+### BACKLOG:
+
+- UMRR
+- Lettuce Shop
+- Anna Extension
+
+### ICE BOX:
+
+- PanaceaStreet
+- isthemost.fun
+- Outlining GTD
+- Transferring Journals
+- PE
+
+#### SOMEDAY/MAYBE
+
+- Artist's Way
+- GoodReads up to date
+
 ## 01-31-21
 
 - EHD
