@@ -4,6 +4,37 @@ title: 'Tracking'
 permalink: /tracking/
 ---
 
+## 02-08-21
+
+### PD:
+
+- STATS: UPY: Recommenders -- finished V1 (simple correlation recommendation)
+- UJS:
+- UWD: react-reddit-pics
+- MATH: 3B1B Linear Algebra -- what is a determinant? (the area and volume of a transformation -- imagine moving ihat and jhat, currently at ihat[1,0], and jhat[0,1], to their new destination)
+
+### ONGOING:
+
+- EHD: TODO -- 1. Move photos from EHD 5 to EHD 7. Continue to "sort" the other EHDs 2. Brain Dump 3. Trello,
+- MOM2: TODO -- finish butterfly video and lifework
+- KO.com: TODO -- 1. Brain Dump 2. Trello
+
+### BACKLOG:
+
+- UMRR
+- Lettuce Shop
+- Anna Extension
+- Dr. Donna
+- Black Llama Studios
+
+### ICEBOX:
+
+- PanaceaStreet
+- isthemost.fun
+- Outlining GTD
+- Transferring Journals (part of YIR, DIR)
+- MATH: PE
+
 ## 02-01-21
 
 ### PD:
