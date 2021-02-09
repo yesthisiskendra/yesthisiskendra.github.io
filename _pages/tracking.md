@@ -4,6 +4,32 @@ title: 'Tracking'
 permalink: /tracking/
 ---
 
+## 02-09-21
+
+### NEW:
+
+- Tableau experiment!
+- CG App
+
+### PD:
+
+- STATS: Tableau
+- UJS:
+- UWD: finished react-reddit-pics, added SHOW ME ANIMALS WITH JOBS button!
+- MATH:
+
+### ONGOING:
+
+(same)
+
+### BACKLOG:
+
+(same)
+
+### ICEBOX:
+
+(same)
+
 ## 02-08-21
 
 ### PD:
