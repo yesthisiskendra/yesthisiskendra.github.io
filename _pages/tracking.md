@@ -4,12 +4,52 @@ title: 'Tracking'
 permalink: /tracking/
 ---
 
+## 02-16-21
+
+### PD:
+
+- STATS: U-Tableau
+- UJS: Assembly
+- UWD: caroline-googlesheets
+- MATH: U-Tableau
+
+### TOP PRIORITIES:
+
+- AoL Job App
+- CG Job App
+- KO.com
+- Update react-reddit-pics with notes from today
+
+### ONGOING:
+
+- EHD: Currently --
+  - EHD_8: Duplicating EHD_7 backup
+  - EHD_10: Collected all to-name and to-sort into \_\_TODO folder
+- GTD: Currently --
+  - Adding all old projects to backlog for clear brain
+
+### BACKLOG:
+
+- UPY recommender
+- UMRR
+- Lettuce Shop
+- Anna Extension
+- Dr. Donna
+- Black Llama Studios
+
+### ICEBOX:
+
+- PanaceaStreet
+- isthemost.fun
+- Transferring Journals (part of YIR, DIR)
+- MATH: PE
+
 ## 02-09-21
 
 ### NEW:
 
 - Tableau experiment!
-- CG App
+- CG Job App
 - PIANO: Bach
 
 ### PD:
