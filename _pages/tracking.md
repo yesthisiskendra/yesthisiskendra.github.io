@@ -4,7 +4,32 @@ title: 'Tracking'
 permalink: /tracking/
 ---
 
+## 03-01-21
+
+### PD:
+
+- STATS: Tableau -- sorting and filtering
+- UJS: Parens, continued
+- MATH: Extra UJS paren time
+- UWD: Caroline-googlesheets
+
+### LOF PERSONAL:
+
+- MOM3 (LOA)
+
+### LOF PROFESSIONAL:
+
+- Tableau
+- React tables
+- Caroline-googlesheets
+- panaceastreet.com worldmap (where I've been!)
+
 ## 02-25-21
+
+#### STARTED:
+
+- Panaceastreet.com
+- Panaceastreet.com/ageoflearning.html
 
 ### LOF: Me
 
@@ -22,7 +47,17 @@ permalink: /tracking/
 
 - React Tables
 
----
+## -- rewritten
+
+### LOF PERSONAL:
+
+- MOM3 (LOA)
+- Van Swang House
+
+### LOF PROFESSIONAL:
+
+- Tableau
+- React tables
 
 ## 02-20-21
 
