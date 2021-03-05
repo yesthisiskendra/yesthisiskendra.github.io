@@ -4,7 +4,28 @@ title: 'Tracking'
 permalink: /tracking/
 ---
 
+## 03-05-21
+
+- STATS:
+- UJS: DJ
+- UWD: uwd-kentcdodds
+- MATH:
+
+## 03-04-21
+
+- STATS: job/JOB_AWS
+- UJS:
+
+## 03-03-21
+
+- STATS: job/JOB_AWS
+- UJS: CapG phone + resume
+- UWD:
+- MATH: Tableau
+
 ## 03-02-21
+
+### PD:
 
 - STATS: Tableau
 - UJS: Synthesis
