@@ -4,12 +4,19 @@ title: 'Tracking'
 permalink: /tracking/
 ---
 
+## 03-08-21
+
+- STATS: Scheduled Tableau for Friday, did quiz
+- UJS: ... resume?
+- UWD: liquid looping for blogs
+- MATH: ...?
+
 ## 03-05-21
 
-- STATS:
+- STATS: tableau
 - UJS: DJ
 - UWD: uwd-kentcdodds
-- MATH:
+- MATH: ...?
 
 ## 03-04-21
 
