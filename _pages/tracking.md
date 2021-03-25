@@ -4,6 +4,16 @@ title: 'Tracking'
 permalink: /tracking/
 ---
 
+## 03-25-21
+
+### Ongoing Projects
+
+- Resume
+- Momentum
+- Nest video backlog
+- LCPC
+- EHD
+
 ## 03-08-21
 
 - STATS: Scheduled Tableau for Friday, did quiz
