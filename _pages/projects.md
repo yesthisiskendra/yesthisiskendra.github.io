@@ -1,16 +1,22 @@
 ---
 layout: home
-title: "Projects"
+title: 'Projects'
 permalink: /projects/
 ---
 
 ## Current Projects
 
-[COVID19](https://yesthisiskendra.github.io/COVID19)
+1. JOB
+   1. AWS
+   2. Twitter
+2. Momentum
+3. KendraOsburn.com
 
 ## Past Projects
 
-Coming soon
+[COVID19](https://yesthisiskendra.github.io/COVID19)
+
+More coming soon
 
 ### THINGS I'VE MADE FOR ONE REASON OR ANOTHER:
 
@@ -69,4 +75,3 @@ UMRE
 UPY
 UPYDash
 UPiano
-
