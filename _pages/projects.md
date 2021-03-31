@@ -6,11 +6,17 @@ permalink: /projects/
 
 ## Current Projects
 
-1. JOB
+1. GTD
+2. RESUME
+   1. KendraMSDS
+   2. KendraOsburn.com
+   3. yesthisiskendra.com
+   4. yesthisiskendra.wordpress.com
+3. JOB APPS
    1. AWS
    2. Twitter
-2. Momentum
-3. KendraOsburn.com
+4. Momentum (see Clara)
+5. "Designing my Perfect Life"
 
 ## Past Projects
 
