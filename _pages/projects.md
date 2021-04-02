@@ -15,6 +15,8 @@ permalink: /projects/
 3. JOB APPS
    1. AWS
    2. Twitter
+   3. SpaceX
+   4. Via Tableau
 4. Momentum (see Clara)
 5. "Designing my Perfect Life"
 
