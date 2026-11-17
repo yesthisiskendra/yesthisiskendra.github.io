@@ -4,6 +4,11 @@ title: 'Projects'
 permalink: /projects/
 ---
 
+## 2026 update
+
+### November Sidequets
+1. see posts
+
 ## Current Projects
 
 1. GTD
